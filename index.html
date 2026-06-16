@@ -3,388 +3,678 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Steven Saji Paul — Portfolio</title>
+<title>Steven Saji Paul — Business Systems Analyst & Product Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --color-bg: #ffffff;
-    --color-bg-secondary: #f5f5f3;
-    --color-text-primary: #1a1a18;
-    --color-text-secondary: #5f5e5a;
-    --color-text-tertiary: #888780;
-    --color-border: rgba(0,0,0,0.12);
-    --color-border-hover: rgba(0,0,0,0.22);
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --blue-bg: #E6F1FB;
-    --blue-text: #0C447C;
-    --green-bg: #E1F5EE;
-    --green-text: #085041;
-    --green-accent: #1D9E75;
-    --purple-bg: #EEEDFE;
-    --purple-text: #3C3489;
-    --amber-bg: #FAECE7;
-    --amber-text: #712B13;
-  }
+:root {
+  --ink: #111210;
+  --ink-secondary: #4a4a47;
+  --ink-tertiary: #8a8a86;
+  --paper: #fafaf8;
+  --paper-secondary: #f2f2ef;
+  --paper-tertiary: #e8e8e4;
+  --accent: #1a3a2a;
+  --accent-mid: #2d6449;
+  --accent-light: #e8f2ec;
+  --accent-text: #1a3a2a;
+  --border: rgba(0,0,0,0.09);
+  --border-mid: rgba(0,0,0,0.15);
+  --radius: 4px;
+  --radius-lg: 8px;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-bg: #1c1c1a;
-      --color-bg-secondary: #262624;
-      --color-text-primary: #f0efeb;
-      --color-text-secondary: #b4b2a9;
-      --color-text-tertiary: #888780;
-      --color-border: rgba(255,255,255,0.1);
-      --color-border-hover: rgba(255,255,255,0.2);
-      --blue-bg: #0c3a5e;
-      --blue-text: #85b7eb;
-      --green-bg: #063d2a;
-      --green-text: #5dcaa5;
-      --green-accent: #5dcaa5;
-      --purple-bg: #2a2560;
-      --purple-text: #afa9ec;
-      --amber-bg: #4a2010;
-      --amber-text: #f09977;
-    }
-  }
+html { scroll-behavior: smooth; }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--color-bg);
-    color: var(--color-text-primary);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-  .container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--paper) !important;
+  background: var(--accent);
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  transition: opacity 0.15s !important;
+}
+.nav-cta:hover { opacity: 0.85; }
 
-  /* NAV */
-  nav {
-    border-bottom: 0.5px solid var(--color-border);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    background: var(--color-bg);
-    z-index: 10;
-  }
-  nav .inner {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a { font-size: 13px; color: var(--color-text-secondary); text-decoration: none; }
-  .nav-links a:hover { color: var(--color-text-primary); }
+/* LAYOUT */
+.page { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
 
-  /* HERO */
-  .hero { padding: 3.5rem 0 2.5rem; border-bottom: 0.5px solid var(--color-border); }
-  .eyebrow { font-size: 11px; letter-spacing: 0.1em; color: var(--color-text-tertiary); text-transform: uppercase; margin-bottom: 0.6rem; }
-  .hero h1 { font-size: 36px; font-weight: 500; line-height: 1.15; margin-bottom: 0.5rem; }
-  .hero-sub { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin-bottom: 1.5rem; }
-  .roles { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-  .role-pill { font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; background: var(--blue-bg); color: var(--blue-text); }
-  .contact-row { display: flex; gap: 20px; flex-wrap: wrap; }
-  .contact-row a { font-size: 13px; color: var(--color-text-secondary); text-decoration: none; display: flex; align-items: center; gap: 5px; }
-  .contact-row a:hover { color: var(--color-text-primary); }
-  .contact-row svg { width: 14px; height: 14px; }
+/* HERO */
+.hero {
+  padding: 140px 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: center;
+  border-bottom: 0.5px solid var(--border);
+}
+.hero-left {}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--accent-mid);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-mid);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.hero-sub {
+  font-size: 16px;
+  color: var(--ink-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 22px;
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: opacity 0.15s;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 11px 22px;
+  background: transparent;
+  color: var(--ink);
+  border: 0.5px solid var(--border-mid);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.15s;
+  letter-spacing: 0.01em;
+}
+.btn-secondary:hover { background: var(--paper-secondary); }
 
-  /* SECTIONS */
-  section { padding: 2rem 0; border-bottom: 0.5px solid var(--color-border); }
-  .section-label { font-size: 11px; letter-spacing: 0.1em; color: var(--color-text-tertiary); text-transform: uppercase; margin-bottom: 1.25rem; }
+.hero-right {}
+.hero-card {
+  background: var(--paper-secondary);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+.hero-card-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 1.25rem;
+}
+.stat-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+.stat { }
+.stat-n {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-l { font-size: 12px; color: var(--ink-tertiary); line-height: 1.4; }
+.divider { height: 0.5px; background: var(--border); margin: 1.25rem 0; }
+.role-stack { display: flex; flex-direction: column; gap: 6px; }
+.role-item {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-text);
+  background: var(--accent-light);
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+.role-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-mid); }
 
-  /* STATS */
-  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-  .stat-card { background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 1rem; }
-  .stat-num { font-size: 26px; font-weight: 500; }
-  .stat-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+/* SECTIONS */
+.section { padding: 5rem 0; border-bottom: 0.5px solid var(--border); }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section-num {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-tertiary);
+  letter-spacing: 0.08em;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
 
-  /* SKILLS */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 9px; }
-  .skill-card { background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 0.875rem 1rem; }
-  .skill-card-label { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.07em; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .skill-tag { font-size: 11px; color: var(--color-text-secondary); background: var(--color-bg); border: 0.5px solid var(--color-border); border-radius: 4px; padding: 2px 7px; }
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.skill-block { background: var(--paper); padding: 1.5rem; }
+.skill-block-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  margin-bottom: 1rem;
+}
+.skill-list { list-style: none; }
+.skill-list li {
+  font-size: 13px;
+  color: var(--ink-secondary);
+  padding: 4px 0;
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.skill-list li:last-child { border-bottom: none; }
+.skill-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--accent-mid); flex-shrink: 0; }
 
-  /* PROJECTS */
-  .projects { display: flex; flex-direction: column; gap: 11px; }
-  .project-card { background: var(--color-bg); border: 0.5px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.15s; }
-  .project-card:hover { border-color: var(--color-border-hover); }
-  .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 0.3rem; }
-  .project-title { font-size: 15px; font-weight: 500; }
-  .project-org { font-size: 12px; color: var(--color-text-tertiary); margin-bottom: 0.6rem; }
-  .badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
-  .badge-pm { background: var(--amber-bg); color: var(--amber-text); }
-  .badge-ba { background: var(--green-bg); color: var(--green-text); }
-  .badge-bsa { background: var(--purple-bg); color: var(--purple-text); }
-  .project-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.65; margin-bottom: 0.8rem; }
-  .outcomes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.8rem; }
-  .outcome { font-size: 12px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 4px; }
-  .outcome::before { content: "✓"; color: var(--green-accent); font-size: 12px; }
-  .tool-row { display: flex; gap: 5px; flex-wrap: wrap; padding-top: 0.75rem; border-top: 0.5px solid var(--color-border); }
-  .tool-tag { font-size: 11px; color: var(--color-text-secondary); background: var(--color-bg-secondary); border-radius: 4px; padding: 2px 8px; }
+/* EXPERIENCE */
+.exp-grid { display: grid; grid-template-columns: 200px 1fr; gap: 0; }
+.exp-timeline { padding-right: 2.5rem; border-right: 0.5px solid var(--border); }
+.exp-entries { padding-left: 2.5rem; }
+.exp-tab {
+  padding: 1rem 0;
+  cursor: pointer;
+  border-bottom: 0.5px solid var(--border);
+}
+.exp-tab:last-child { border-bottom: none; }
+.exp-tab-company { font-size: 13px; font-weight: 500; color: var(--ink-secondary); transition: color 0.15s; }
+.exp-tab-date { font-size: 11px; color: var(--ink-tertiary); margin-top: 2px; }
+.exp-tab.active .exp-tab-company { color: var(--accent-mid); }
+.exp-tab:hover .exp-tab-company { color: var(--ink); }
 
-  /* EXPERIENCE */
-  .exp-list { display: flex; flex-direction: column; gap: 0; }
-  .exp-item { display: flex; gap: 16px; }
-  .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
-  .exp-dot { width: 9px; height: 9px; border-radius: 50%; background: #378ADD; flex-shrink: 0; }
-  .exp-line { width: 1px; background: var(--color-border); flex: 1; margin: 5px 0; }
-  .exp-content { flex: 1; padding-bottom: 20px; }
-  .exp-role { font-size: 14px; font-weight: 500; }
-  .exp-org { font-size: 13px; color: var(--color-text-secondary); }
-  .exp-date { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
-  .exp-bullets { margin-top: 8px; padding-left: 16px; }
-  .exp-bullets li { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 4px; }
+.exp-entry { display: none; }
+.exp-entry.active { display: block; }
+.exp-entry-role {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.exp-entry-meta { font-size: 13px; color: var(--ink-tertiary); margin-bottom: 1.5rem; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.exp-bullets li {
+  font-size: 14px;
+  color: var(--ink-secondary);
+  line-height: 1.65;
+  padding-left: 16px;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 4px;
+  height: 1px;
+  background: var(--accent-mid);
+}
 
-  /* EDUCATION */
-  .edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .edu-card { background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 1rem; }
-  .edu-deg { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
-  .edu-school { font-size: 13px; color: var(--color-text-secondary); }
-  .edu-year { font-size: 12px; color: var(--color-text-tertiary); margin-top: 3px; }
+/* PROJECTS */
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.project-card {
+  background: var(--paper);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover { border-color: var(--border-mid); transform: translateY(-2px); }
+.project-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+.project-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+.badge-pm { background: #fef3e8; color: #8a4a10; }
+.badge-ba { background: #e8f5ee; color: #1a5c35; }
+.badge-bsa { background: #eeecfe; color: #3d2f9e; }
+.project-title { font-size: 16px; font-weight: 500; color: var(--ink); line-height: 1.3; flex: 1; padding-right: 10px; }
+.project-org { font-size: 12px; color: var(--ink-tertiary); margin-bottom: 0.875rem; }
+.project-desc { font-size: 13px; color: var(--ink-secondary); line-height: 1.65; margin-bottom: 1.25rem; flex: 1; }
+.project-outcomes { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 5px; }
+.outcome {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.4;
+}
+.outcome-check { color: var(--accent-mid); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+.project-footer {
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.tool-tag {
+  font-size: 11px;
+  color: var(--ink-tertiary);
+  background: var(--paper-secondary);
+  border-radius: var(--radius);
+  padding: 3px 8px;
+}
+.project-doc-btn {
+  margin-top: 1rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-mid);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0.5px solid var(--accent-mid);
+  padding: 5px 12px;
+  border-radius: var(--radius);
+  transition: background 0.15s;
+  width: fit-content;
+}
+.project-doc-btn:hover { background: var(--accent-light); }
 
-  /* CTA */
-  .cta-section { padding: 2rem 0 3rem; }
-  .cta-card { background: var(--color-bg-secondary); border-radius: var(--radius-lg); padding: 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-  .cta-text h3 { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
-  .cta-text p { font-size: 13px; color: var(--color-text-secondary); }
-  .cta-btn { font-size: 13px; font-weight: 500; padding: 10px 20px; background: var(--color-text-primary); color: var(--color-bg); border-radius: var(--radius-md); text-decoration: none; white-space: nowrap; }
-  .cta-btn:hover { opacity: 0.82; }
+/* EDUCATION */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.edu-card {
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+.edu-deg { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.edu-school { font-size: 13px; color: var(--ink-secondary); margin-bottom: 4px; }
+.edu-year { font-size: 12px; color: var(--ink-tertiary); }
 
-  @media (max-width: 520px) {
-    .hero h1 { font-size: 26px; }
-    .edu-row { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr 1fr; }
-    nav .inner { padding: 0 1rem; }
-    .container { padding: 0 1rem; }
-  }
+/* CONTACT */
+.contact-section { padding: 5rem 0; }
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.contact-heading {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+.contact-sub { font-size: 14px; color: var(--ink-secondary); line-height: 1.7; font-weight: 300; }
+.contact-links { display: flex; flex-direction: column; gap: 12px; }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  padding: 12px 16px;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.15s, background 0.15s;
+}
+.contact-link:hover { border-color: var(--border-mid); background: var(--paper-secondary); color: var(--ink); }
+.contact-link-icon { width: 32px; height: 32px; border-radius: var(--radius); background: var(--paper-secondary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-link-icon svg { width: 15px; height: 15px; color: var(--ink-secondary); }
+.contact-link-label { font-weight: 500; font-size: 13px; color: var(--ink); }
+.contact-link-val { font-size: 12px; color: var(--ink-tertiary); }
+
+/* FOOTER */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 1.5rem 0;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name { font-family: var(--serif); font-size: 14px; color: var(--ink-tertiary); }
+.footer-note { font-size: 12px; color: var(--ink-tertiary); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 120px 0 60px; }
+  .hero h1 { font-size: 38px; }
+  .hero-right { display: none; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .exp-timeline { border-right: none; border-bottom: 0.5px solid var(--border); padding-right: 0; padding-bottom: 1.5rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; overflow-x: auto; }
+  .exp-entries { padding-left: 0; }
+  .exp-tab { border-bottom: none; border-right: 0.5px solid var(--border); padding-right: 1.5rem; white-space: nowrap; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 600px) {
+  .page { padding: 0 1.25rem; }
+  .nav-inner { padding: 0 1.25rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .stat-pair { grid-template-columns: 1fr 1fr; }
+  .footer-inner { padding: 0 1.25rem; flex-direction: column; gap: 4px; text-align: center; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="inner">
-    <span class="nav-name">Steven Saji Paul</span>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Steven Saji Paul</a>
     <div class="nav-links">
-      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <a href="mailto:stevenspaul97@gmail.com" class="nav-cta">Get in touch</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
+<div class="page">
 
   <!-- HERO -->
-  <div class="hero" id="contact">
-    <p class="eyebrow">Portfolio</p>
-    <h1>Steven Saji Paul</h1>
-    <p class="hero-sub">Business Systems Analyst with 4+ years translating stakeholder needs into functional specifications and technical solutions. Skilled in requirements gathering, SQL, UAT coordination, and agile product delivery.</p>
-    <div class="roles">
-      <span class="role-pill">Business Analyst</span>
-      <span class="role-pill">Business Systems Analyst</span>
-      <span class="role-pill">Product Manager</span>
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Business Systems Analyst & Product Manager</p>
+      <h1>Steven<br>Saji Paul</h1>
+      <p class="hero-sub">Six years bridging business strategy and technical execution — from requirements to go-live — across enterprise platforms, agile teams, and data-driven product decisions.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View projects</a>
+        <a href="mailto:stevenspaul97@gmail.com" class="btn-secondary">Get in touch</a>
+      </div>
     </div>
-    <div class="contact-row">
-      <a href="mailto:stevenspaul97@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-        stevenspaul97@gmail.com
-      </a>
-      <a href="https://linkedin.com/in/stevensajipaul" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
-        linkedin.com/in/stevensajipaul
-      </a>
-      <a href="tel:5626867082">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (562) 686-7082
-      </a>
+    <div class="hero-right">
+      <div class="hero-card">
+        <p class="hero-card-label">Career snapshot</p>
+        <div class="stat-pair">
+          <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Years of experience</div></div>
+          <div class="stat"><div class="stat-n">95%</div><div class="stat-l">Defect resolution pre-go-live</div></div>
+          <div class="stat"><div class="stat-n">40%</div><div class="stat-l">Reduction in post-deploy failures</div></div>
+          <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Enterprise product lines</div></div>
+        </div>
+        <div class="divider"></div>
+        <div class="role-stack">
+          <span class="role-item"><span class="role-dot"></span>Business Systems Analyst</span>
+          <span class="role-item"><span class="role-dot"></span>Business Analyst</span>
+          <span class="role-item"><span class="role-dot"></span>Product Manager</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- STATS -->
-  <section>
-    <p class="section-label">By the numbers</p>
-    <div class="stats-row">
-      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Years of experience</div></div>
-      <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">Defect resolution rate pre-go-live</div></div>
-      <div class="stat-card"><div class="stat-num">40%</div><div class="stat-label">Reduction in post-deployment failures</div></div>
-      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Enterprise product lines supported</div></div>
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Core competencies</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <p class="skill-block-label">Business Analysis</p>
+        <ul class="skill-list">
+          <li>Requirements gathering</li>
+          <li>Gap analysis</li>
+          <li>Process mapping</li>
+          <li>Use case development</li>
+          <li>Functional specifications</li>
+          <li>Data flow diagrams</li>
+          <li>Acceptance criteria</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <p class="skill-block-label">Product Management</p>
+        <ul class="skill-list">
+          <li>Product roadmapping</li>
+          <li>User stories & backlog</li>
+          <li>Feature prioritization</li>
+          <li>Go-to-market strategy</li>
+          <li>KPI definition & tracking</li>
+          <li>Stakeholder management</li>
+          <li>Competitive analysis</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <p class="skill-block-label">Technical</p>
+        <ul class="skill-list">
+          <li>SQL (MySQL, PostgreSQL)</li>
+          <li>Python</li>
+          <li>REST APIs</li>
+          <li>AWS (EC2, RDS)</li>
+          <li>Selenium WebDriver</li>
+          <li>GitHub</li>
+          <li>Integration workflow design</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <p class="skill-block-label">Tools & Methods</p>
+        <ul class="skill-list">
+          <li>JIRA & Confluence</li>
+          <li>Agile / Scrum</li>
+          <li>Waterfall / SDLC</li>
+          <li>ERP & CRM Platforms</li>
+          <li>BI Tools</li>
+          <li>UAT coordination</li>
+          <li>Technical documentation</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section>
-    <p class="section-label">Skills</p>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <p class="skill-card-label">Business Analysis</p>
-        <div class="skill-tags">
-          <span class="skill-tag">Requirements gathering</span>
-          <span class="skill-tag">Gap analysis</span>
-          <span class="skill-tag">Process mapping</span>
-          <span class="skill-tag">Use case development</span>
-          <span class="skill-tag">Functional specs</span>
-          <span class="skill-tag">Data flow diagrams</span>
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-timeline">
+        <div class="exp-tab active" onclick="showExp('tcs-bsa', this)">
+          <p class="exp-tab-company">Tata Consultancy Services</p>
+          <p class="exp-tab-date">2022 – 2024</p>
+        </div>
+        <div class="exp-tab" onclick="showExp('tcs-qa', this)">
+          <p class="exp-tab-company">Tata Consultancy Services</p>
+          <p class="exp-tab-date">2019 – 2022</p>
+        </div>
+        <div class="exp-tab" onclick="showExp('csulb', this)">
+          <p class="exp-tab-company">CSULB</p>
+          <p class="exp-tab-date">2025 – 2026</p>
         </div>
       </div>
-      <div class="skill-card">
-        <p class="skill-card-label">Product Management</p>
-        <div class="skill-tags">
-          <span class="skill-tag">Roadmapping</span>
-          <span class="skill-tag">User stories</span>
-          <span class="skill-tag">Backlog grooming</span>
-          <span class="skill-tag">Feature prioritization</span>
-          <span class="skill-tag">KPI definition</span>
-          <span class="skill-tag">Go-to-market strategy</span>
+      <div class="exp-entries">
+        <div class="exp-entry active" id="exp-tcs-bsa">
+          <p class="exp-entry-role">Business Systems Analyst</p>
+          <p class="exp-entry-meta">Tata Consultancy Services &nbsp;·&nbsp; May 2022 – Apr 2024 &nbsp;·&nbsp; Full-time</p>
+          <ul class="exp-bullets">
+            <li>Gathered and documented business requirements across 5+ enterprise product lines, conducting gap analysis, stakeholder interviews, and producing functional specifications aligned to business objectives.</li>
+            <li>Configured and customized enterprise platforms, serving as the primary liaison between business stakeholders and technical teams, presenting proof-of-concept builds to client executives.</li>
+            <li>Led UAT cycles across multiple client environments, developing structured test plans, coordinating defect resolution, and achieving 95% defect resolution rates prior to go-live — reducing post-deployment failures by 40%.</li>
+            <li>Built and maintained SQL-based queries, data reports, and operational dashboards to support financial analysis, KPI tracking, and client decision-making.</li>
+            <li>Authored and maintained technical documentation including SOPs, business rules, configuration specifications, and integration workflow designs.</li>
+          </ul>
         </div>
-      </div>
-      <div class="skill-card">
-        <p class="skill-card-label">Technical</p>
-        <div class="skill-tags">
-          <span class="skill-tag">SQL (MySQL, PostgreSQL)</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">AWS (EC2, RDS)</span>
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">GitHub</span>
+        <div class="exp-entry" id="exp-tcs-qa">
+          <p class="exp-entry-role">Quality Analyst</p>
+          <p class="exp-entry-meta">Tata Consultancy Services &nbsp;·&nbsp; Nov 2019 – May 2022 &nbsp;·&nbsp; Full-time</p>
+          <ul class="exp-bullets">
+            <li>Developed 150+ structured test cases to validate enterprise application configurations across functional, regression, and integration testing phases.</li>
+            <li>Delivered end-user training on updated application workflows, developing training guides and conducting walkthroughs that supported confident platform adoption.</li>
+            <li>Collaborated with development teams to reproduce and resolve defects efficiently across multiple client environments, conducting root cause analysis.</li>
+          </ul>
         </div>
-      </div>
-      <div class="skill-card">
-        <p class="skill-card-label">Tools & Methods</p>
-        <div class="skill-tags">
-          <span class="skill-tag">JIRA</span>
-          <span class="skill-tag">Confluence</span>
-          <span class="skill-tag">Agile / Scrum</span>
-          <span class="skill-tag">Waterfall / SDLC</span>
-          <span class="skill-tag">BI Tools</span>
-          <span class="skill-tag">ERP / CRM Platforms</span>
+        <div class="exp-entry" id="exp-csulb">
+          <p class="exp-entry-role">Teaching Assistant — Management Information Systems</p>
+          <p class="exp-entry-meta">California State University, Long Beach &nbsp;·&nbsp; Jan 2025 – May 2026</p>
+          <ul class="exp-bullets">
+            <li>Delivered technical curriculum covering enterprise application design, database systems, and agile workflows to 100+ graduate students.</li>
+            <li>Managed end user support operations, triaging and resolving application and configuration issues across concurrent project teams.</li>
+            <li>Produced self-service process maps, SOPs, and training materials that reduced repeat queries and improved operational consistency.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <p class="section-label">Projects</p>
-    <div class="projects">
+  <section class="section" id="projects">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Selected projects</h2>
+    </div>
+    <div class="projects-grid">
 
       <div class="project-card">
-        <div class="project-top">
+        <div class="project-card-top">
           <p class="project-title">Copyryto — AI Content Copyright Protection Platform</p>
-          <span class="badge badge-pm">PM</span>
+          <span class="project-badge badge-pm">PM</span>
         </div>
         <p class="project-org">CSULB Academic Project</p>
-        <p class="project-desc">Led end-to-end product delivery for an 8-member cross-functional team. Defined the product roadmap, managed sprint cycles, coordinated stakeholder demos, and oversaw design, engineering, and documentation tracks from discovery through go-live. Produced feature specifications, use case documentation, acceptance criteria, and go-to-market deliverables.</p>
-        <div class="outcomes">
-          <span class="outcome">Full SDLC from discovery to go-live</span>
-          <span class="outcome">8-member cross-functional team</span>
-          <span class="outcome">Complete governance & knowledge transfer docs</span>
+        <p class="project-desc">Led end-to-end product delivery for an 8-member cross-functional team. Defined the product roadmap, managed sprint cycles, coordinated stakeholder demos, and oversaw design, engineering, and documentation from discovery through go-live.</p>
+        <div class="project-outcomes">
+          <div class="outcome"><span class="outcome-check">✓</span> Full SDLC ownership — discovery through go-live</div>
+          <div class="outcome"><span class="outcome-check">✓</span> Feature specs, use cases & acceptance criteria</div>
+          <div class="outcome"><span class="outcome-check">✓</span> Complete stakeholder governance documentation</div>
         </div>
-        <div class="tool-row">
+        <div class="project-footer">
           <span class="tool-tag">JIRA</span>
           <span class="tool-tag">Confluence</span>
           <span class="tool-tag">Agile / Scrum</span>
           <span class="tool-tag">Process mapping</span>
-          <span class="tool-tag">Requirements gathering</span>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-top">
+        <div class="project-card-top">
           <p class="project-title">ZeroNow — Real-Time AI Food Waste Marketplace</p>
-          <span class="badge badge-ba">BA</span>
+          <span class="project-badge badge-ba">BA</span>
         </div>
         <p class="project-org">CSULB Academic Project</p>
-        <p class="project-desc">Designed the product architecture and business model for a two-sided AI marketplace. Developed Business Model and Value Proposition canvases, technical specifications, data flow diagrams, and conducted stakeholder interviews to capture functional requirements. Conducted competitive analysis to define differentiated go-to-market positioning across five revenue streams.</p>
-        <div class="outcomes">
-          <span class="outcome">5 revenue streams analyzed & modeled</span>
-          <span class="outcome">Differentiated go-to-market positioning</span>
-          <span class="outcome">KPI dashboards & adoption metrics produced</span>
+        <p class="project-desc">Designed the product architecture and business model for a two-sided AI marketplace. Developed Business Model and Value Proposition canvases, technical specifications, data flow diagrams, and stakeholder interviews to capture functional requirements.</p>
+        <div class="project-outcomes">
+          <div class="outcome"><span class="outcome-check">✓</span> 5 revenue streams analyzed & modeled</div>
+          <div class="outcome"><span class="outcome-check">✓</span> Differentiated go-to-market positioning defined</div>
+          <div class="outcome"><span class="outcome-check">✓</span> KPI dashboards & adoption metrics produced</div>
         </div>
-        <div class="tool-row">
+        <div class="project-footer">
           <span class="tool-tag">Data flow diagrams</span>
           <span class="tool-tag">Competitive analysis</span>
-          <span class="tool-tag">Stakeholder interviews</span>
           <span class="tool-tag">Business Model Canvas</span>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-top">
-          <p class="project-title">Second-Hand Car Marketplace — Database & Analytics Design</p>
-          <span class="badge badge-bsa">BSA</span>
+        <div class="project-card-top">
+          <p class="project-title">Second-Hand Car Marketplace — Database & Analytics</p>
+          <span class="project-badge badge-bsa">BSA</span>
         </div>
         <p class="project-org">CSULB Academic Project</p>
-        <p class="project-desc">Designed a fully normalized 17-entity relational database applying data conversion methodologies. Produced a complete data dictionary, logical model, physical design, and access control policy aligned to enterprise data governance standards. Engineered 10 SQL analytical queries across transaction, user, and listing domains, and developed SOPs and database recovery procedures.</p>
-        <div class="outcomes">
-          <span class="outcome">17-entity fully normalized schema</span>
-          <span class="outcome">10 operational SQL analytical queries</span>
-          <span class="outcome">Full data governance & recovery SOPs</span>
+        <p class="project-desc">Designed a fully normalized 17-entity relational database applying data conversion methodologies. Produced a complete data dictionary, logical model, physical design, and access control policy aligned to enterprise data governance standards.</p>
+        <div class="project-outcomes">
+          <div class="outcome"><span class="outcome-check">✓</span> 17-entity fully normalized schema</div>
+          <div class="outcome"><span class="outcome-check">✓</span> 10 SQL analytical queries engineered</div>
+          <div class="outcome"><span class="outcome-check">✓</span> Full data governance & recovery SOPs</div>
         </div>
-        <div class="tool-row">
+        <div class="project-footer">
           <span class="tool-tag">MySQL</span>
           <span class="tool-tag">PostgreSQL</span>
           <span class="tool-tag">ERD / Data modeling</span>
           <span class="tool-tag">Data dictionary</span>
-          <span class="tool-tag">Access control policy</span>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <p class="section-label">Experience</p>
-    <div class="exp-list">
-
-      <div class="exp-item">
-        <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
-        <div class="exp-content">
-          <p class="exp-role">Teaching Assistant — Management Information Systems</p>
-          <p class="exp-org">California State University, Long Beach</p>
-          <p class="exp-date">Jan 2025 – May 2026</p>
-          <ul class="exp-bullets">
-            <li>Delivered technical curriculum on enterprise application design, database systems, and agile workflows to 100+ graduate students.</li>
-            <li>Produced process maps, SOPs, and training materials that reduced repeat queries and improved operational consistency.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
-        <div class="exp-content">
-          <p class="exp-role">Business Systems Analyst</p>
-          <p class="exp-org">Tata Consultancy Services</p>
-          <p class="exp-date">May 2022 – Apr 2024</p>
-          <ul class="exp-bullets">
-            <li>Gathered and documented requirements across 5+ enterprise product lines; conducted gap analysis and produced functional specifications.</li>
-            <li>Led UAT cycles achieving 95% defect resolution rates pre-go-live, reducing post-deployment failures by 40%.</li>
-            <li>Built SQL-based dashboards to support financial analysis and KPI tracking across interconnected enterprise systems.</li>
-            <li>Authored SOPs, business rules, configuration specs, and integration workflow designs to accelerate future delivery timelines.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-dot-col"><div class="exp-dot"></div></div>
-        <div class="exp-content">
-          <p class="exp-role">Quality Analyst</p>
-          <p class="exp-org">Tata Consultancy Services</p>
-          <p class="exp-date">Nov 2019 – May 2022</p>
-          <ul class="exp-bullets">
-            <li>Developed 150+ structured test cases covering functional, regression, and integration testing phases.</li>
-            <li>Delivered end-user training and conducted root cause analysis to resolve defects across multiple client environments.</li>
-          </ul>
+      <!-- Placeholder card for adding a 4th project -->
+      <div class="project-card" style="border-style: dashed; background: var(--paper-secondary); justify-content: center; align-items: center; min-height: 220px;">
+        <div style="text-align: center; color: var(--ink-tertiary);">
+          <div style="font-size: 28px; margin-bottom: 8px;">+</div>
+          <p style="font-size: 13px;">Add your next project here</p>
         </div>
       </div>
 
@@ -392,9 +682,12 @@
   </section>
 
   <!-- EDUCATION -->
-  <section>
-    <p class="section-label">Education</p>
-    <div class="edu-row">
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-grid">
       <div class="edu-card">
         <p class="edu-deg">M.S. Information Systems</p>
         <p class="edu-school">California State University, Long Beach</p>
@@ -408,17 +701,62 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta-section">
-    <div class="cta-card">
-      <div class="cta-text">
-        <h3>Open to BA, BSA & PM opportunities</h3>
-        <p>Based in Long Beach, CA — available for remote or hybrid roles.</p>
+  <!-- CONTACT -->
+  <div class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-heading">Let's work<br>together.</h2>
+        <p class="contact-sub">Open to BA, BSA, and PM roles — remote or hybrid. Based in Long Beach, CA. Always happy to connect and discuss how I can add value to your team.</p>
       </div>
-      <a href="mailto:stevenspaul97@gmail.com" class="cta-btn">Get in touch</a>
+      <div class="contact-links">
+        <a href="mailto:stevenspaul97@gmail.com" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </div>
+          <div>
+            <p class="contact-link-label">Email</p>
+            <p class="contact-link-val">stevenspaul97@gmail.com</p>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/stevensajipaul" target="_blank" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+          </div>
+          <div>
+            <p class="contact-link-label">LinkedIn</p>
+            <p class="contact-link-val">linkedin.com/in/stevensajipaul</p>
+          </div>
+        </a>
+        <a href="tel:5626867082" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <p class="contact-link-label">Phone</p>
+            <p class="contact-link-val">(562) 686-7082</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
 </div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Steven Saji Paul</span>
+    <span class="footer-note">Business Systems Analyst · Product Manager · Long Beach, CA</span>
+  </div>
+</footer>
+
+<script>
+function showExp(id, tab) {
+  document.querySelectorAll('.exp-entry').forEach(e => e.classList.remove('active'));
+  document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('exp-' + id).classList.add('active');
+  tab.classList.add('active');
+}
+</script>
+
 </body>
 </html>
