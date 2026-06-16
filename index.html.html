@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Steven Saji Paul — Portfolio</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f5f5f3;
+    --color-text-primary: #1a1a18;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #888780;
+    --color-border: rgba(0,0,0,0.12);
+    --color-border-hover: rgba(0,0,0,0.22);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --blue-bg: #E6F1FB;
+    --blue-text: #0C447C;
+    --green-bg: #E1F5EE;
+    --green-text: #085041;
+    --green-accent: #1D9E75;
+    --purple-bg: #EEEDFE;
+    --purple-text: #3C3489;
+    --amber-bg: #FAECE7;
+    --amber-text: #712B13;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #1c1c1a;
+      --color-bg-secondary: #262624;
+      --color-text-primary: #f0efeb;
+      --color-text-secondary: #b4b2a9;
+      --color-text-tertiary: #888780;
+      --color-border: rgba(255,255,255,0.1);
+      --color-border-hover: rgba(255,255,255,0.2);
+      --blue-bg: #0c3a5e;
+      --blue-text: #85b7eb;
+      --green-bg: #063d2a;
+      --green-text: #5dcaa5;
+      --green-accent: #5dcaa5;
+      --purple-bg: #2a2560;
+      --purple-text: #afa9ec;
+      --amber-bg: #4a2010;
+      --amber-text: #f09977;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* NAV */
+  nav {
+    border-bottom: 0.5px solid var(--color-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    z-index: 10;
+  }
+  nav .inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { font-size: 13px; color: var(--color-text-secondary); text-decoration: none; }
+  .nav-links a:hover { color: var(--color-text-primary); }
+
+  /* HERO */
+  .hero { padding: 3.5rem 0 2.5rem; border-bottom: 0.5px solid var(--color-border); }
+  .eyebrow { font-size: 11px; letter-spacing: 0.1em; color: var(--color-text-tertiary); text-transform: uppercase; margin-bottom: 0.6rem; }
+  .hero h1 { font-size: 36px; font-weight: 500; line-height: 1.15; margin-bottom: 0.5rem; }
+  .hero-sub { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin-bottom: 1.5rem; }
+  .roles { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .role-pill { font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; background: var(--blue-bg); color: var(--blue-text); }
+  .contact-row { display: flex; gap: 20px; flex-wrap: wrap; }
+  .contact-row a { font-size: 13px; color: var(--color-text-secondary); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .contact-row a:hover { color: var(--color-text-primary); }
+  .contact-row svg { width: 14px; height: 14px; }
+
+  /* SECTIONS */
+  section { padding: 2rem 0; border-bottom: 0.5px solid var(--color-border); }
+  .section-label { font-size: 11px; letter-spacing: 0.1em; color: var(--color-text-tertiary); text-transform: uppercase; margin-bottom: 1.25rem; }
+
+  /* STATS */
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .stat-card { background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 1rem; }
+  .stat-num { font-size: 26px; font-weight: 500; }
+  .stat-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 9px; }
+  .skill-card { background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 0.875rem 1rem; }
+  .skill-card-label { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.07em; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag { font-size: 11px; color: var(--color-text-secondary); background: var(--color-bg); border: 0.5px solid var(--color-border); border-radius: 4px; padding: 2px 7px; }
+
+  /* PROJECTS */
+  .projects { display: flex; flex-direction: column; gap: 11px; }
+  .project-card { background: var(--color-bg); border: 0.5px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.15s; }
+  .project-card:hover { border-color: var(--color-border-hover); }
+  .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 0.3rem; }
+  .project-title { font-size: 15px; font-weight: 500; }
+  .project-org { font-size: 12px; color: var(--color-text-tertiary); margin-bottom: 0.6rem; }
+  .badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .badge-pm { background: var(--amber-bg); color: var(--amber-text); }
+  .badge-ba { background: var(--green-bg); color: var(--green-text); }
+  .badge-bsa { background: var(--purple-bg); color: var(--purple-text); }
+  .project-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.65; margin-bottom: 0.8rem; }
+  .outcomes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.8rem; }
+  .outcome { font-size: 12px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 4px; }
+  .outcome::before { content: "✓"; color: var(--green-accent); font-size: 12px; }
+  .tool-row { display: flex; gap: 5px; flex-wrap: wrap; padding-top: 0.75rem; border-top: 0.5px solid var(--color-border); }
+  .tool-tag { font-size: 11px; color: var(--color-text-secondary); background: var(--color-bg-secondary); border-radius: 4px; padding: 2px 8px; }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item { display: flex; gap: 16px; }
+  .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
+  .exp-dot { width: 9px; height: 9px; border-radius: 50%; background: #378ADD; flex-shrink: 0; }
+  .exp-line { width: 1px; background: var(--color-border); flex: 1; margin: 5px 0; }
+  .exp-content { flex: 1; padding-bottom: 20px; }
+  .exp-role { font-size: 14px; font-weight: 500; }
+  .exp-org { font-size: 13px; color: var(--color-text-secondary); }
+  .exp-date { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
+  .exp-bullets { margin-top: 8px; padding-left: 16px; }
+  .exp-bullets li { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 4px; }
+
+  /* EDUCATION */
+  .edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .edu-card { background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 1rem; }
+  .edu-deg { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+  .edu-school { font-size: 13px; color: var(--color-text-secondary); }
+  .edu-year { font-size: 12px; color: var(--color-text-tertiary); margin-top: 3px; }
+
+  /* CTA */
+  .cta-section { padding: 2rem 0 3rem; }
+  .cta-card { background: var(--color-bg-secondary); border-radius: var(--radius-lg); padding: 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .cta-text h3 { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .cta-text p { font-size: 13px; color: var(--color-text-secondary); }
+  .cta-btn { font-size: 13px; font-weight: 500; padding: 10px 20px; background: var(--color-text-primary); color: var(--color-bg); border-radius: var(--radius-md); text-decoration: none; white-space: nowrap; }
+  .cta-btn:hover { opacity: 0.82; }
+
+  @media (max-width: 520px) {
+    .hero h1 { font-size: 26px; }
+    .edu-row { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    nav .inner { padding: 0 1rem; }
+    .container { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="nav-name">Steven Saji Paul</span>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero" id="contact">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Steven Saji Paul</h1>
+    <p class="hero-sub">Business Systems Analyst with 4+ years translating stakeholder needs into functional specifications and technical solutions. Skilled in requirements gathering, SQL, UAT coordination, and agile product delivery.</p>
+    <div class="roles">
+      <span class="role-pill">Business Analyst</span>
+      <span class="role-pill">Business Systems Analyst</span>
+      <span class="role-pill">Product Manager</span>
+    </div>
+    <div class="contact-row">
+      <a href="mailto:stevenspaul97@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        stevenspaul97@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/stevensajipaul" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        linkedin.com/in/stevensajipaul
+      </a>
+      <a href="tel:5626867082">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (562) 686-7082
+      </a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section>
+    <p class="section-label">By the numbers</p>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Years of experience</div></div>
+      <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">Defect resolution rate pre-go-live</div></div>
+      <div class="stat-card"><div class="stat-num">40%</div><div class="stat-label">Reduction in post-deployment failures</div></div>
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Enterprise product lines supported</div></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <p class="section-label">Skills</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-card-label">Business Analysis</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Requirements gathering</span>
+          <span class="skill-tag">Gap analysis</span>
+          <span class="skill-tag">Process mapping</span>
+          <span class="skill-tag">Use case development</span>
+          <span class="skill-tag">Functional specs</span>
+          <span class="skill-tag">Data flow diagrams</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <p class="skill-card-label">Product Management</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Roadmapping</span>
+          <span class="skill-tag">User stories</span>
+          <span class="skill-tag">Backlog grooming</span>
+          <span class="skill-tag">Feature prioritization</span>
+          <span class="skill-tag">KPI definition</span>
+          <span class="skill-tag">Go-to-market strategy</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <p class="skill-card-label">Technical</p>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL (MySQL, PostgreSQL)</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">AWS (EC2, RDS)</span>
+          <span class="skill-tag">Selenium</span>
+          <span class="skill-tag">GitHub</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <p class="skill-card-label">Tools & Methods</p>
+        <div class="skill-tags">
+          <span class="skill-tag">JIRA</span>
+          <span class="skill-tag">Confluence</span>
+          <span class="skill-tag">Agile / Scrum</span>
+          <span class="skill-tag">Waterfall / SDLC</span>
+          <span class="skill-tag">BI Tools</span>
+          <span class="skill-tag">ERP / CRM Platforms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Projects</p>
+    <div class="projects">
+
+      <div class="project-card">
+        <div class="project-top">
+          <p class="project-title">Copyryto — AI Content Copyright Protection Platform</p>
+          <span class="badge badge-pm">PM</span>
+        </div>
+        <p class="project-org">CSULB Academic Project</p>
+        <p class="project-desc">Led end-to-end product delivery for an 8-member cross-functional team. Defined the product roadmap, managed sprint cycles, coordinated stakeholder demos, and oversaw design, engineering, and documentation tracks from discovery through go-live. Produced feature specifications, use case documentation, acceptance criteria, and go-to-market deliverables.</p>
+        <div class="outcomes">
+          <span class="outcome">Full SDLC from discovery to go-live</span>
+          <span class="outcome">8-member cross-functional team</span>
+          <span class="outcome">Complete governance & knowledge transfer docs</span>
+        </div>
+        <div class="tool-row">
+          <span class="tool-tag">JIRA</span>
+          <span class="tool-tag">Confluence</span>
+          <span class="tool-tag">Agile / Scrum</span>
+          <span class="tool-tag">Process mapping</span>
+          <span class="tool-tag">Requirements gathering</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <p class="project-title">ZeroNow — Real-Time AI Food Waste Marketplace</p>
+          <span class="badge badge-ba">BA</span>
+        </div>
+        <p class="project-org">CSULB Academic Project</p>
+        <p class="project-desc">Designed the product architecture and business model for a two-sided AI marketplace. Developed Business Model and Value Proposition canvases, technical specifications, data flow diagrams, and conducted stakeholder interviews to capture functional requirements. Conducted competitive analysis to define differentiated go-to-market positioning across five revenue streams.</p>
+        <div class="outcomes">
+          <span class="outcome">5 revenue streams analyzed & modeled</span>
+          <span class="outcome">Differentiated go-to-market positioning</span>
+          <span class="outcome">KPI dashboards & adoption metrics produced</span>
+        </div>
+        <div class="tool-row">
+          <span class="tool-tag">Data flow diagrams</span>
+          <span class="tool-tag">Competitive analysis</span>
+          <span class="tool-tag">Stakeholder interviews</span>
+          <span class="tool-tag">Business Model Canvas</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <p class="project-title">Second-Hand Car Marketplace — Database & Analytics Design</p>
+          <span class="badge badge-bsa">BSA</span>
+        </div>
+        <p class="project-org">CSULB Academic Project</p>
+        <p class="project-desc">Designed a fully normalized 17-entity relational database applying data conversion methodologies. Produced a complete data dictionary, logical model, physical design, and access control policy aligned to enterprise data governance standards. Engineered 10 SQL analytical queries across transaction, user, and listing domains, and developed SOPs and database recovery procedures.</p>
+        <div class="outcomes">
+          <span class="outcome">17-entity fully normalized schema</span>
+          <span class="outcome">10 operational SQL analytical queries</span>
+          <span class="outcome">Full data governance & recovery SOPs</span>
+        </div>
+        <div class="tool-row">
+          <span class="tool-tag">MySQL</span>
+          <span class="tool-tag">PostgreSQL</span>
+          <span class="tool-tag">ERD / Data modeling</span>
+          <span class="tool-tag">Data dictionary</span>
+          <span class="tool-tag">Access control policy</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Experience</p>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+        <div class="exp-content">
+          <p class="exp-role">Teaching Assistant — Management Information Systems</p>
+          <p class="exp-org">California State University, Long Beach</p>
+          <p class="exp-date">Jan 2025 – May 2026</p>
+          <ul class="exp-bullets">
+            <li>Delivered technical curriculum on enterprise application design, database systems, and agile workflows to 100+ graduate students.</li>
+            <li>Produced process maps, SOPs, and training materials that reduced repeat queries and improved operational consistency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+        <div class="exp-content">
+          <p class="exp-role">Business Systems Analyst</p>
+          <p class="exp-org">Tata Consultancy Services</p>
+          <p class="exp-date">May 2022 – Apr 2024</p>
+          <ul class="exp-bullets">
+            <li>Gathered and documented requirements across 5+ enterprise product lines; conducted gap analysis and produced functional specifications.</li>
+            <li>Led UAT cycles achieving 95% defect resolution rates pre-go-live, reducing post-deployment failures by 40%.</li>
+            <li>Built SQL-based dashboards to support financial analysis and KPI tracking across interconnected enterprise systems.</li>
+            <li>Authored SOPs, business rules, configuration specs, and integration workflow designs to accelerate future delivery timelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col"><div class="exp-dot"></div></div>
+        <div class="exp-content">
+          <p class="exp-role">Quality Analyst</p>
+          <p class="exp-org">Tata Consultancy Services</p>
+          <p class="exp-date">Nov 2019 – May 2022</p>
+          <ul class="exp-bullets">
+            <li>Developed 150+ structured test cases covering functional, regression, and integration testing phases.</li>
+            <li>Delivered end-user training and conducted root cause analysis to resolve defects across multiple client environments.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <p class="section-label">Education</p>
+    <div class="edu-row">
+      <div class="edu-card">
+        <p class="edu-deg">M.S. Information Systems</p>
+        <p class="edu-school">California State University, Long Beach</p>
+        <p class="edu-year">May 2026</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-deg">B.E. Information Technology</p>
+        <p class="edu-school">University of Mumbai</p>
+        <p class="edu-year">May 2019</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h3>Open to BA, BSA & PM opportunities</h3>
+        <p>Based in Long Beach, CA — available for remote or hybrid roles.</p>
+      </div>
+      <a href="mailto:stevenspaul97@gmail.com" class="cta-btn">Get in touch</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
