@@ -4,443 +4,181 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Steven Saji Paul — Business Systems Analyst & Product Manager</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --ink: #111210;
-  --ink-secondary: #4a4a47;
-  --ink-tertiary: #8a8a86;
-  --paper: #fafaf8;
-  --paper-secondary: #f2f2ef;
-  --paper-tertiary: #e8e8e4;
-  --accent: #1a3a2a;
-  --accent-mid: #2d6449;
-  --accent-light: #e8f2ec;
-  --accent-text: #1a3a2a;
-  --border: rgba(0,0,0,0.09);
-  --border-mid: rgba(0,0,0,0.15);
+  --black: #0a0a08;
+  --black-card: #141412;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-dim: #9a7a35;
+  --gold-bg: rgba(201,168,76,0.08);
+  --gold-bg-mid: rgba(201,168,76,0.14);
+  --ink: #f0ede4;
+  --ink-secondary: #b8b4a8;
+  --ink-tertiary: #6e6b62;
+  --border: rgba(201,168,76,0.15);
+  --border-mid: rgba(201,168,76,0.3);
   --radius: 4px;
   --radius-lg: 8px;
   --sans: 'Inter', -apple-system, sans-serif;
-  --serif: 'Playfair Display', Georgia, serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
 }
-
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--sans);
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 15px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
+body { font-family: var(--sans); background: var(--black); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
 
 /* NAV */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(250,250,248,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid var(--border);
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 17px;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--ink-secondary);
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  transition: color 0.15s;
-}
-.nav-links a:hover { color: var(--ink); }
-.nav-cta {
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  color: var(--paper) !important;
-  background: var(--accent);
-  padding: 7px 16px;
-  border-radius: var(--radius);
-  transition: opacity 0.15s !important;
-}
-.nav-cta:hover { opacity: 0.85; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,8,0.94); backdrop-filter: blur(18px); border-bottom: 0.5px solid var(--border); }
+.nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; height: 62px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: var(--serif); font-size: 19px; font-weight: 400; color: var(--gold-light); text-decoration: none; letter-spacing: 0.02em; white-space: nowrap; }
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-links a { font-size: 11px; font-weight: 400; color: var(--ink-secondary); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.15s; }
+.nav-links a:hover { color: var(--gold-light); }
+.nav-cta { font-size: 11px !important; font-weight: 500 !important; color: var(--black) !important; background: var(--gold) !important; padding: 8px 18px !important; border-radius: var(--radius) !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; transition: background 0.15s !important; }
+.nav-cta:hover { background: var(--gold-light) !important; }
 
 /* LAYOUT */
-.page { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+.page { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; }
 
 /* HERO */
-.hero {
-  padding: 140px 0 80px;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 4rem;
-  align-items: center;
-  border-bottom: 0.5px solid var(--border);
-}
-.hero-left {}
-.hero-eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--accent-mid);
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--accent-mid);
-}
-.hero h1 {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 1.25rem;
-}
-.hero-sub {
-  font-size: 16px;
-  color: var(--ink-secondary);
-  line-height: 1.7;
-  max-width: 480px;
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
+.hero { padding: 150px 0 90px; display: grid; grid-template-columns: 1fr 370px; gap: 4rem; align-items: center; border-bottom: 0.5px solid var(--border); }
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
+.hero h1 { font-family: var(--serif); font-size: 68px; font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 1.5rem; white-space: nowrap; }
+.name-steven { color: var(--gold-light); }
+.name-saji   { color: #ffffff; }
+.name-paul   { color: var(--gold-light); }
+.hero-sub { font-size: 15px; color: var(--ink-secondary); line-height: 1.75; max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn-primary {
-  font-size: 13px;
-  font-weight: 500;
-  padding: 11px 22px;
-  background: var(--accent);
-  color: var(--paper);
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition: opacity 0.15s;
-  letter-spacing: 0.01em;
-}
-.btn-primary:hover { opacity: 0.85; }
-.btn-secondary {
-  font-size: 13px;
-  font-weight: 400;
-  padding: 11px 22px;
-  background: transparent;
-  color: var(--ink);
-  border: 0.5px solid var(--border-mid);
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition: background 0.15s;
-  letter-spacing: 0.01em;
-}
-.btn-secondary:hover { background: var(--paper-secondary); }
+.btn-primary { font-size: 11px; font-weight: 500; padding: 12px 24px; background: var(--gold); color: var(--black); border-radius: var(--radius); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.15s; }
+.btn-primary:hover { background: var(--gold-light); }
+.btn-secondary { font-size: 11px; font-weight: 400; padding: 12px 24px; background: transparent; color: var(--gold); border: 0.5px solid var(--border-mid); border-radius: var(--radius); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.15s; }
+.btn-secondary:hover { background: var(--gold-bg); }
 
-.hero-right {}
-.hero-card {
-  background: var(--paper-secondary);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-}
-.hero-card-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-tertiary);
-  margin-bottom: 1.25rem;
-}
-.stat-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
-.stat { }
-.stat-n {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.stat-l { font-size: 12px; color: var(--ink-tertiary); line-height: 1.4; }
-.divider { height: 0.5px; background: var(--border); margin: 1.25rem 0; }
-.role-stack { display: flex; flex-direction: column; gap: 6px; }
-.role-item {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent-text);
-  background: var(--accent-light);
-  padding: 5px 10px;
-  border-radius: var(--radius);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  width: fit-content;
-}
-.role-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-mid); }
+/* HERO CARD */
+.hero-card { background: var(--black-card); border: 0.5px solid var(--border-mid); border-radius: var(--radius-lg); padding: 2rem; position: relative; overflow: hidden; }
+.hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.hero-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1.5rem; }
+.stat-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+.stat-n { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--gold-light); line-height: 1; margin-bottom: 5px; }
+.stat-l { font-size: 11px; color: var(--ink-tertiary); line-height: 1.4; }
+.gold-divider { height: 0.5px; background: linear-gradient(90deg, var(--gold-dim), transparent); margin: 1.25rem 0; }
+.role-stack { display: flex; flex-direction: column; gap: 7px; }
+.role-item { font-size: 12px; font-weight: 400; color: var(--gold); background: var(--gold-bg); border: 0.5px solid var(--border); padding: 6px 12px; border-radius: var(--radius); display: flex; align-items: center; gap: 8px; }
+.role-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
 /* SECTIONS */
-.section { padding: 5rem 0; border-bottom: 0.5px solid var(--border); }
-.section-header {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-.section-num {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-tertiary);
-  letter-spacing: 0.08em;
-}
-.section-title {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
+.section { padding: 5.5rem 0; border-bottom: 0.5px solid var(--border); }
+.section-header { display: flex; align-items: baseline; gap: 1.25rem; margin-bottom: 3rem; }
+.section-num { font-family: var(--serif); font-size: 13px; color: var(--gold-dim); letter-spacing: 0.06em; }
+.section-title { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--ink); letter-spacing: 0.01em; }
 
 /* SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.skill-block { background: var(--paper); padding: 1.5rem; }
-.skill-block-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-tertiary);
-  margin-bottom: 1rem;
-}
+.skill-block { background: var(--black-card); padding: 1.75rem; }
+.skill-block-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
 .skill-list { list-style: none; }
-.skill-list li {
-  font-size: 13px;
-  color: var(--ink-secondary);
-  padding: 4px 0;
-  border-bottom: 0.5px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
+.skill-list li { font-size: 13px; color: var(--ink-secondary); padding: 5px 0; border-bottom: 0.5px solid rgba(201,168,76,0.07); display: flex; align-items: center; gap: 8px; font-weight: 300; }
 .skill-list li:last-child { border-bottom: none; }
-.skill-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--accent-mid); flex-shrink: 0; }
+.skill-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0; }
 
-/* EXPERIENCE */
-.exp-grid { display: grid; grid-template-columns: 200px 1fr; gap: 0; }
+/* EXPERIENCE TABS */
+.exp-grid { display: grid; grid-template-columns: 220px 1fr; }
 .exp-timeline { padding-right: 2.5rem; border-right: 0.5px solid var(--border); }
 .exp-entries { padding-left: 2.5rem; }
-.exp-tab {
-  padding: 1rem 0;
-  cursor: pointer;
-  border-bottom: 0.5px solid var(--border);
-}
+.exp-tab { padding: 1.1rem 0 1.1rem 12px; cursor: pointer; border-bottom: 0.5px solid var(--border); border-left: 2px solid transparent; transition: border-color 0.2s, padding-left 0.2s; }
 .exp-tab:last-child { border-bottom: none; }
-.exp-tab-company { font-size: 13px; font-weight: 500; color: var(--ink-secondary); transition: color 0.15s; }
-.exp-tab-date { font-size: 11px; color: var(--ink-tertiary); margin-top: 2px; }
-.exp-tab.active .exp-tab-company { color: var(--accent-mid); }
-.exp-tab:hover .exp-tab-company { color: var(--ink); }
-
+.exp-tab-company { font-size: 13px; font-weight: 400; color: var(--ink-tertiary); line-height: 1.4; transition: color 0.15s; }
+.exp-tab-date { font-size: 11px; color: var(--ink-tertiary); margin-top: 3px; opacity: 0.55; }
+.exp-tab.active { border-left-color: var(--gold); padding-left: 16px; }
+.exp-tab.active .exp-tab-company { color: var(--gold-light); }
+.exp-tab:hover .exp-tab-company { color: var(--ink-secondary); }
 .exp-entry { display: none; }
 .exp-entry.active { display: block; }
-.exp-entry-role {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-.exp-entry-meta { font-size: 13px; color: var(--ink-tertiary); margin-bottom: 1.5rem; }
-.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.exp-bullets li {
-  font-size: 14px;
-  color: var(--ink-secondary);
-  line-height: 1.65;
-  padding-left: 16px;
-  position: relative;
-}
-.exp-bullets li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 4px;
-  height: 1px;
-  background: var(--accent-mid);
-}
+.exp-entry-role { font-family: var(--serif); font-size: 28px; font-weight: 300; color: var(--ink); margin-bottom: 6px; letter-spacing: 0.01em; }
+.exp-entry-meta { font-size: 12px; color: var(--gold-dim); margin-bottom: 1.75rem; letter-spacing: 0.04em; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.exp-bullets li { font-size: 14px; color: var(--ink-secondary); line-height: 1.7; padding-left: 18px; position: relative; font-weight: 300; }
+.exp-bullets li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 1px; background: var(--gold-dim); }
+.metric { display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; color: var(--gold-light); background: var(--gold-bg); border: 0.5px solid rgba(201,168,76,0.25); padding: 1px 8px; border-radius: 20px; margin: 0 2px; vertical-align: middle; white-space: nowrap; }
 
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.project-card {
-  background: var(--paper);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  transition: border-color 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-.project-card:hover { border-color: var(--border-mid); transform: translateY(-2px); }
-.project-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
-.project-badge {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 20px;
-}
-.badge-pm { background: #fef3e8; color: #8a4a10; }
-.badge-ba { background: #e8f5ee; color: #1a5c35; }
-.badge-bsa { background: #eeecfe; color: #3d2f9e; }
-.project-title { font-size: 16px; font-weight: 500; color: var(--ink); line-height: 1.3; flex: 1; padding-right: 10px; }
-.project-org { font-size: 12px; color: var(--ink-tertiary); margin-bottom: 0.875rem; }
-.project-desc { font-size: 13px; color: var(--ink-secondary); line-height: 1.65; margin-bottom: 1.25rem; flex: 1; }
-.project-outcomes { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 5px; }
-.outcome {
-  font-size: 12px;
-  color: var(--ink-secondary);
-  display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  line-height: 1.4;
-}
-.outcome-check { color: var(--accent-mid); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-.project-footer {
-  padding-top: 1rem;
-  border-top: 0.5px solid var(--border);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.tool-tag {
-  font-size: 11px;
-  color: var(--ink-tertiary);
-  background: var(--paper-secondary);
-  border-radius: var(--radius);
-  padding: 3px 8px;
-}
-.project-doc-btn {
-  margin-top: 1rem;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent-mid);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  border: 0.5px solid var(--accent-mid);
-  padding: 5px 12px;
-  border-radius: var(--radius);
-  transition: background 0.15s;
-  width: fit-content;
-}
-.project-doc-btn:hover { background: var(--accent-light); }
+.project-card { background: var(--black-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.875rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); opacity: 0; transition: opacity 0.2s; }
+.project-card:hover { border-color: var(--border-mid); transform: translateY(-3px); }
+.project-card:hover::after { opacity: 1; }
+.project-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
+.project-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; flex-shrink: 0; }
+.badge-pm  { background: rgba(201,168,76,0.15); color: var(--gold-light); border: 0.5px solid rgba(201,168,76,0.3); }
+.badge-ba  { background: rgba(100,180,120,0.1); color: #7ecf97; border: 0.5px solid rgba(100,180,120,0.25); }
+.badge-bsa { background: rgba(140,120,210,0.1); color: #b0a0e8; border: 0.5px solid rgba(140,120,210,0.25); }
+.project-title { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.35; flex: 1; padding-right: 10px; }
+.project-org { font-size: 11px; color: var(--ink-tertiary); margin-bottom: 1rem; letter-spacing: 0.03em; }
+.project-desc { font-size: 13px; color: var(--ink-secondary); line-height: 1.7; margin-bottom: 1.25rem; flex: 1; font-weight: 300; }
+.project-outcomes { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 6px; }
+.outcome { font-size: 12px; color: var(--ink-secondary); display: flex; align-items: flex-start; gap: 8px; line-height: 1.45; font-weight: 300; }
+.outcome-check { color: var(--gold); font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+.project-footer { padding-top: 1rem; border-top: 0.5px solid var(--border); display: flex; flex-wrap: wrap; gap: 5px; }
+.tool-tag { font-size: 11px; color: var(--ink-tertiary); background: rgba(255,255,255,0.04); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 3px 9px; }
 
 /* EDUCATION */
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.edu-card {
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-}
-.edu-deg { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-.edu-school { font-size: 13px; color: var(--ink-secondary); margin-bottom: 4px; }
-.edu-year { font-size: 12px; color: var(--ink-tertiary); }
+.edu-card { background: var(--black-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; position: relative; overflow: hidden; transition: border-color 0.2s; }
+.edu-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--gold-dim), transparent); }
+.edu-card:hover { border-color: var(--border-mid); }
+.edu-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1rem; }
+.edu-deg { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 5px; }
+.edu-school { font-size: 13px; color: var(--ink-secondary); font-weight: 300; margin-bottom: 4px; }
+.edu-year { font-size: 12px; color: var(--gold-dim); }
 
 /* CONTACT */
-.contact-section { padding: 5rem 0; }
-.contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-.contact-heading {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 1rem;
-}
-.contact-sub { font-size: 14px; color: var(--ink-secondary); line-height: 1.7; font-weight: 300; }
-.contact-links { display: flex; flex-direction: column; gap: 12px; }
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--ink-secondary);
-  text-decoration: none;
-  padding: 12px 16px;
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius-lg);
-  transition: border-color 0.15s, background 0.15s;
-}
-.contact-link:hover { border-color: var(--border-mid); background: var(--paper-secondary); color: var(--ink); }
-.contact-link-icon { width: 32px; height: 32px; border-radius: var(--radius); background: var(--paper-secondary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.contact-link-icon svg { width: 15px; height: 15px; color: var(--ink-secondary); }
-.contact-link-label { font-weight: 500; font-size: 13px; color: var(--ink); }
+.contact-section { padding: 5.5rem 0; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-heading { font-family: var(--serif); font-size: 48px; font-weight: 300; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
+.contact-heading span { color: var(--gold-light); }
+.contact-sub { font-size: 14px; color: var(--ink-secondary); line-height: 1.75; font-weight: 300; }
+.contact-links { display: flex; flex-direction: column; gap: 10px; }
+.contact-link { display: flex; align-items: center; gap: 14px; text-decoration: none; padding: 14px 16px; border: 0.5px solid var(--border); border-radius: var(--radius-lg); background: var(--black-card); transition: border-color 0.15s, background 0.15s; }
+.contact-link:hover { border-color: var(--border-mid); background: var(--gold-bg); }
+.contact-link-icon { width: 34px; height: 34px; border-radius: var(--radius); background: var(--gold-bg); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-link-icon svg { width: 15px; height: 15px; stroke: var(--gold); }
+.contact-link-label { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 1px; }
 .contact-link-val { font-size: 12px; color: var(--ink-tertiary); }
 
 /* FOOTER */
-footer {
-  border-top: 0.5px solid var(--border);
-  padding: 1.5rem 0;
-}
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-name { font-family: var(--serif); font-size: 14px; color: var(--ink-tertiary); }
-.footer-note { font-size: 12px; color: var(--ink-tertiary); }
+footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
+.footer-inner { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-name { font-family: var(--serif); font-size: 15px; color: var(--gold-dim); }
+.footer-note { font-size: 11px; color: var(--ink-tertiary); letter-spacing: 0.04em; }
 
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding: 120px 0 60px; }
-  .hero h1 { font-size: 38px; }
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; padding: 130px 0 70px; }
+  .hero h1 { font-size: 48px; white-space: normal; }
   .hero-right { display: none; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .exp-grid { grid-template-columns: 1fr; }
-  .exp-timeline { border-right: none; border-bottom: 0.5px solid var(--border); padding-right: 0; padding-bottom: 1.5rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; overflow-x: auto; }
+  .exp-timeline { border-right: none; border-bottom: 0.5px solid var(--border); padding-right: 0; padding-bottom: 1rem; margin-bottom: 2rem; display: flex; overflow-x: auto; }
+  .exp-tab { border-bottom: none; border-left: none !important; padding: 0.75rem 1.25rem; white-space: nowrap; border-bottom: 2px solid transparent !important; }
+  .exp-tab.active { border-bottom: 2px solid var(--gold) !important; padding-left: 1.25rem; }
   .exp-entries { padding-left: 0; }
-  .exp-tab { border-bottom: none; border-right: 0.5px solid var(--border); padding-right: 1.5rem; white-space: nowrap; }
   .projects-grid { grid-template-columns: 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
-  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
 }
 @media (max-width: 600px) {
   .page { padding: 0 1.25rem; }
   .nav-inner { padding: 0 1.25rem; }
+  .hero h1 { font-size: 36px; }
   .nav-links a:not(.nav-cta) { display: none; }
   .skills-grid { grid-template-columns: 1fr; }
-  .stat-pair { grid-template-columns: 1fr 1fr; }
-  .footer-inner { padding: 0 1.25rem; flex-direction: column; gap: 4px; text-align: center; }
+  .footer-inner { padding: 0 1.25rem; flex-direction: column; gap: 6px; text-align: center; }
+  .contact-heading { font-size: 36px; }
 }
 </style>
 </head>
@@ -450,9 +188,10 @@ footer {
   <div class="nav-inner">
     <a href="#" class="nav-logo">Steven Saji Paul</a>
     <div class="nav-links">
+      <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#education">Education</a>
       <a href="mailto:stevenspaul97@gmail.com" class="nav-cta">Get in touch</a>
     </div>
   </div>
@@ -463,24 +202,24 @@ footer {
   <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Business Systems Analyst & Product Manager</p>
-      <h1>Steven<br>Saji Paul</h1>
-      <p class="hero-sub">Six years bridging business strategy and technical execution — from requirements to go-live — across enterprise platforms, agile teams, and data-driven product decisions.</p>
+      <p class="hero-eyebrow">Business Systems Analyst · Product Manager · BA</p>
+      <h1><span class="name-steven">Steven </span><span class="name-saji">Saji </span><span class="name-paul">Paul</span></h1>
+      <p class="hero-sub">Six years bridging business strategy and technical execution — from requirements gathering to go-live — across Oracle ERP, enterprise platforms, agile product delivery, and SQL-driven analytics. 95% defect resolution. Zero missed go-lives.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View projects</a>
-        <a href="mailto:stevenspaul97@gmail.com" class="btn-secondary">Get in touch</a>
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="mailto:stevenspaul97@gmail.com" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-card">
-        <p class="hero-card-label">Career snapshot</p>
+        <p class="hero-card-label">Career Snapshot</p>
         <div class="stat-pair">
           <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Years of experience</div></div>
           <div class="stat"><div class="stat-n">95%</div><div class="stat-l">Defect resolution pre-go-live</div></div>
           <div class="stat"><div class="stat-n">40%</div><div class="stat-l">Reduction in post-deploy failures</div></div>
-          <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Enterprise product lines</div></div>
+          <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Test cases engineered</div></div>
         </div>
-        <div class="divider"></div>
+        <div class="gold-divider"></div>
         <div class="role-stack">
           <span class="role-item"><span class="role-dot"></span>Business Systems Analyst</span>
           <span class="role-item"><span class="role-dot"></span>Business Analyst</span>
@@ -491,58 +230,62 @@ footer {
   </div>
 
   <!-- SKILLS -->
-  <section class="section">
+  <section class="section" id="skills">
     <div class="section-header">
       <span class="section-num">01</span>
-      <h2 class="section-title">Core competencies</h2>
+      <h2 class="section-title">Core Competencies</h2>
     </div>
     <div class="skills-grid">
       <div class="skill-block">
         <p class="skill-block-label">Business Analysis</p>
         <ul class="skill-list">
-          <li>Requirements gathering</li>
-          <li>Gap analysis</li>
-          <li>Process mapping</li>
-          <li>Use case development</li>
-          <li>Functional specifications</li>
-          <li>Data flow diagrams</li>
-          <li>Acceptance criteria</li>
+          <li>Requirements Gathering</li>
+          <li>Gap Analysis & Process Mapping</li>
+          <li>Functional Specifications</li>
+          <li>Use Case Development</li>
+          <li>Data Flow Diagrams</li>
+          <li>Acceptance Criteria</li>
+          <li>Data Mapping & Transformation</li>
+          <li>Stakeholder Interviews</li>
         </ul>
       </div>
       <div class="skill-block">
         <p class="skill-block-label">Product Management</p>
         <ul class="skill-list">
-          <li>Product roadmapping</li>
-          <li>User stories & backlog</li>
-          <li>Feature prioritization</li>
-          <li>Go-to-market strategy</li>
-          <li>KPI definition & tracking</li>
-          <li>Stakeholder management</li>
-          <li>Competitive analysis</li>
+          <li>Product Roadmapping</li>
+          <li>User Stories & Backlog Grooming</li>
+          <li>Feature Prioritization</li>
+          <li>Go-to-Market Strategy</li>
+          <li>KPI Definition & Tracking</li>
+          <li>Competitive Analysis</li>
+          <li>Customer & Market Research</li>
+          <li>Product Lifecycle Management</li>
         </ul>
       </div>
       <div class="skill-block">
         <p class="skill-block-label">Technical</p>
         <ul class="skill-list">
-          <li>SQL (MySQL, PostgreSQL)</li>
-          <li>Python</li>
-          <li>REST APIs</li>
-          <li>AWS (EC2, RDS)</li>
-          <li>Selenium WebDriver</li>
-          <li>GitHub</li>
-          <li>Integration workflow design</li>
+          <li>SQL (MySQL, PostgreSQL, T-SQL)</li>
+          <li>Python scripting & automation</li>
+          <li>REST APIs & JSON payloads</li>
+          <li>Oracle EBS R12 (AR, AP, GL, FA)</li>
+          <li>SSIS / ETL Processes</li>
+          <li>AWS (EC2, RDS) & Snowflake</li>
+          <li>Splunk, SyslogNG, ThousandEyes</li>
+          <li>Selenium WebDriver & GitHub</li>
         </ul>
       </div>
       <div class="skill-block">
         <p class="skill-block-label">Tools & Methods</p>
         <ul class="skill-list">
           <li>JIRA & Confluence</li>
-          <li>Agile / Scrum</li>
-          <li>Waterfall / SDLC</li>
+          <li>Agile / Scrum · Waterfall · SDLC</li>
+          <li>Tableau · Power BI · Qlik · Alteryx</li>
           <li>ERP & CRM Platforms</li>
-          <li>BI Tools</li>
-          <li>UAT coordination</li>
-          <li>Technical documentation</li>
+          <li>UAT Coordination & Execution</li>
+          <li>Cisco Meraki · Palo Alto · VMware</li>
+          <li>Microsoft Azure Virtual Desktop</li>
+          <li>Technical Documentation & SOPs</li>
         </ul>
       </div>
     </div>
@@ -557,48 +300,59 @@ footer {
     <div class="exp-grid">
       <div class="exp-timeline">
         <div class="exp-tab active" onclick="showExp('tcs-bsa', this)">
-          <p class="exp-tab-company">Tata Consultancy Services</p>
-          <p class="exp-tab-date">2022 – 2024</p>
+          <p class="exp-tab-company">Business Systems Analyst</p>
+          <p class="exp-tab-date">TCS · 2022 – 2024</p>
         </div>
         <div class="exp-tab" onclick="showExp('tcs-qa', this)">
-          <p class="exp-tab-company">Tata Consultancy Services</p>
-          <p class="exp-tab-date">2019 – 2022</p>
+          <p class="exp-tab-company">Quality Analyst</p>
+          <p class="exp-tab-date">TCS · 2019 – 2022</p>
         </div>
         <div class="exp-tab" onclick="showExp('csulb', this)">
-          <p class="exp-tab-company">CSULB</p>
-          <p class="exp-tab-date">2025 – 2026</p>
+          <p class="exp-tab-company">Teaching Assistant</p>
+          <p class="exp-tab-date">CSULB · 2025 – 2026</p>
         </div>
       </div>
       <div class="exp-entries">
+
+        <!-- TCS BSA — 5 bullets, best from all versions -->
         <div class="exp-entry active" id="exp-tcs-bsa">
           <p class="exp-entry-role">Business Systems Analyst</p>
           <p class="exp-entry-meta">Tata Consultancy Services &nbsp;·&nbsp; May 2022 – Apr 2024 &nbsp;·&nbsp; Full-time</p>
           <ul class="exp-bullets">
-            <li>Gathered and documented business requirements across 5+ enterprise product lines, conducting gap analysis, stakeholder interviews, and producing functional specifications aligned to business objectives.</li>
-            <li>Configured and customized enterprise platforms, serving as the primary liaison between business stakeholders and technical teams, presenting proof-of-concept builds to client executives.</li>
-            <li>Led UAT cycles across multiple client environments, developing structured test plans, coordinating defect resolution, and achieving 95% defect resolution rates prior to go-live — reducing post-deployment failures by 40%.</li>
-            <li>Built and maintained SQL-based queries, data reports, and operational dashboards to support financial analysis, KPI tracking, and client decision-making.</li>
-            <li>Authored and maintained technical documentation including SOPs, business rules, configuration specifications, and integration workflow designs.</li>
+            <li>Gathered and documented business requirements across <span class="metric">5+ enterprise product lines</span>, conducting gap analysis, data mapping, and producing functional specifications — translating complex stakeholder needs into actionable technical solutions delivered on schedule and aligned to business objectives, including Oracle E-Business Suite R12 ERP modules (AR, AP, GL, Fixed Assets, Cash Management).</li>
+            <li>Led UAT cycles across multiple client environments using structured test plans and Splunk log analysis, achieving a <span class="metric">95% defect resolution rate</span> prior to go-live and reducing post-deployment system failures by <span class="metric">40%</span> — serving as primary IT service management liaison, monitoring and prioritizing support tickets for timely resolution.</li>
+            <li>Built and maintained SQL queries, Python scripts, and operational dashboards in Tableau, Power BI, and Qlik to support financial analysis, KPI tracking, and data-driven decision-making — automating routine configuration validations and data extraction workflows, improving reporting efficiency by <span class="metric">30%</span>.</li>
+            <li>Designed and implemented SSIS packages for ETL processes, developed stored procedures, triggers, and indexes to optimize database performance and recoverability, and configured REST API integrations with JSON payload analysis — managing the full product delivery lifecycle from requirements through production deployment.</li>
+            <li>Authored reusable SOPs, business rules, configuration specifications, integration workflow designs, and orchestration diagrams in Confluence; supported PI planning by authoring JIRA user stories with acceptance criteria, managing cross-team dependencies, and coordinating stakeholder feature prioritization across concurrent workstreams.</li>
           </ul>
         </div>
+
+        <!-- TCS QA — 5 bullets, best from all versions -->
         <div class="exp-entry" id="exp-tcs-qa">
           <p class="exp-entry-role">Quality Analyst</p>
           <p class="exp-entry-meta">Tata Consultancy Services &nbsp;·&nbsp; Nov 2019 – May 2022 &nbsp;·&nbsp; Full-time</p>
           <ul class="exp-bullets">
-            <li>Developed 150+ structured test cases to validate enterprise application configurations across functional, regression, and integration testing phases.</li>
-            <li>Delivered end-user training on updated application workflows, developing training guides and conducting walkthroughs that supported confident platform adoption.</li>
-            <li>Collaborated with development teams to reproduce and resolve defects efficiently across multiple client environments, conducting root cause analysis.</li>
+            <li>Developed <span class="metric">150+ structured test cases</span> to validate enterprise application configurations and SQL-based data integrations across functional, regression, and integration testing phases — ensuring client-specific business rules and platform customizations met defined quality standards before go-live.</li>
+            <li>Collaborated with development teams to reproduce and resolve defects efficiently across <span class="metric">multiple client environments</span>, conducting root cause analysis to identify systemic patterns and prevent recurrence, reducing repeat defect rates across subsequent release cycles.</li>
+            <li>Delivered end-user training on updated application workflows, developing structured training guides and conducting walkthroughs in Microsoft PowerPoint that supported confident platform adoption across both technical and non-technical audiences.</li>
+            <li>Reviewed and analyzed system logic end-to-end, revising documentation and procedures as necessary — serving as a key liaison between business stakeholders and technical teams throughout the SDLC to ensure requirements traceability from specification through validation.</li>
+            <li>Coordinated defect resolution workflows across concurrent project teams, escalating critical issues, tracking resolution timelines in JIRA, and producing structured defect reports that improved cross-functional visibility and accelerated time-to-fix by <span class="metric">20%+</span>.</li>
           </ul>
         </div>
+
+        <!-- CSULB — 5 bullets, best from all versions -->
         <div class="exp-entry" id="exp-csulb">
           <p class="exp-entry-role">Teaching Assistant — Management Information Systems</p>
           <p class="exp-entry-meta">California State University, Long Beach &nbsp;·&nbsp; Jan 2025 – May 2026</p>
           <ul class="exp-bullets">
-            <li>Delivered technical curriculum covering enterprise application design, database systems, and agile workflows to 100+ graduate students.</li>
-            <li>Managed end user support operations, triaging and resolving application and configuration issues across concurrent project teams.</li>
-            <li>Produced self-service process maps, SOPs, and training materials that reduced repeat queries and improved operational consistency.</li>
+            <li>Delivered technical curriculum covering enterprise application design, database systems administration, and Agile workflows to <span class="metric">100+ graduate students</span>, facilitating hands-on training sessions and translating complex system concepts into clear, actionable learning for both technical and non-technical audiences.</li>
+            <li>Managed end-user support operations — triaging and resolving application and configuration issues across concurrent project teams using IT operations best practices, producing self-service process guides, SOPs, and training materials that measurably <span class="metric">reduced repeat queries</span> and improved operational consistency program-wide.</li>
+            <li>Monitored course delivery performance, gathered stakeholder feedback from <span class="metric">faculty and student teams</span>, and implemented iterative curriculum enhancements — applying data-driven improvement cycles aligned to program objectives and cross-functional coordination standards.</li>
+            <li>Introduced foundational AI-driven automation use cases and collaborated with faculty on LLM agent prototypes for time-intensive grading and feedback workflows, improving turnaround efficiency for <span class="metric">100+ students</span> per semester.</li>
+            <li>Coordinated project timelines and deliverable schedules across <span class="metric">multiple concurrent course sections</span>, maintaining proactive communication with faculty to ensure all milestones were achieved within defined timeframes — mirroring enterprise project management practices in an academic setting.</li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
@@ -607,7 +361,7 @@ footer {
   <section class="section" id="projects">
     <div class="section-header">
       <span class="section-num">03</span>
-      <h2 class="section-title">Selected projects</h2>
+      <h2 class="section-title">Selected Projects</h2>
     </div>
     <div class="projects-grid">
 
@@ -617,17 +371,15 @@ footer {
           <span class="project-badge badge-pm">PM</span>
         </div>
         <p class="project-org">CSULB Academic Project</p>
-        <p class="project-desc">Led end-to-end product delivery for an 8-member cross-functional team. Defined the product roadmap, managed sprint cycles, coordinated stakeholder demos, and oversaw design, engineering, and documentation from discovery through go-live.</p>
+        <p class="project-desc">Led end-to-end product delivery as PM for an 8-member cross-functional team. Defined product roadmap, managed sprint cycles in JIRA, authored user stories with acceptance criteria, and oversaw design, engineering, and documentation from discovery through go-live. Integrated Splunk for platform monitoring and Python scripts to automate deployment workflows.</p>
         <div class="project-outcomes">
-          <div class="outcome"><span class="outcome-check">✓</span> Full SDLC ownership — discovery through go-live</div>
-          <div class="outcome"><span class="outcome-check">✓</span> Feature specs, use cases & acceptance criteria</div>
-          <div class="outcome"><span class="outcome-check">✓</span> Complete stakeholder governance documentation</div>
+          <div class="outcome"><span class="outcome-check">✦</span> 8-member team · full SDLC ownership</div>
+          <div class="outcome"><span class="outcome-check">✦</span> API specs (Swagger) + orchestration diagrams in Confluence</div>
+          <div class="outcome"><span class="outcome-check">✦</span> Splunk monitoring for real-time triage & trend reporting</div>
+          <div class="outcome"><span class="outcome-check">✦</span> Python automation reduced manual deployment effort</div>
         </div>
         <div class="project-footer">
-          <span class="tool-tag">JIRA</span>
-          <span class="tool-tag">Confluence</span>
-          <span class="tool-tag">Agile / Scrum</span>
-          <span class="tool-tag">Process mapping</span>
+          <span class="tool-tag">JIRA</span><span class="tool-tag">Confluence</span><span class="tool-tag">Splunk</span><span class="tool-tag">Python</span><span class="tool-tag">Agile/Scrum</span><span class="tool-tag">Swagger</span>
         </div>
       </div>
 
@@ -637,16 +389,15 @@ footer {
           <span class="project-badge badge-ba">BA</span>
         </div>
         <p class="project-org">CSULB Academic Project</p>
-        <p class="project-desc">Designed the product architecture and business model for a two-sided AI marketplace. Developed Business Model and Value Proposition canvases, technical specifications, data flow diagrams, and stakeholder interviews to capture functional requirements.</p>
+        <p class="project-desc">Designed product architecture and business model for a two-sided AI SaaS marketplace. Developed Business Model Canvas, Value Proposition Canvas, REST API integration specs, JSON payload schemas, and technical specifications across AI, marketplace, and blockchain layers. Integrated SyslogNG for real-time anomaly detection.</p>
         <div class="project-outcomes">
-          <div class="outcome"><span class="outcome-check">✓</span> 5 revenue streams analyzed & modeled</div>
-          <div class="outcome"><span class="outcome-check">✓</span> Differentiated go-to-market positioning defined</div>
-          <div class="outcome"><span class="outcome-check">✓</span> KPI dashboards & adoption metrics produced</div>
+          <div class="outcome"><span class="outcome-check">✦</span> 5 revenue streams modeled with Tableau KPI dashboards</div>
+          <div class="outcome"><span class="outcome-check">✦</span> Interactive Tableau pricing calculator for member benchmarking</div>
+          <div class="outcome"><span class="outcome-check">✦</span> SyslogNG for proactive anomaly detection</div>
+          <div class="outcome"><span class="outcome-check">✦</span> Differentiated GTM positioning across competitive landscape</div>
         </div>
         <div class="project-footer">
-          <span class="tool-tag">Data flow diagrams</span>
-          <span class="tool-tag">Competitive analysis</span>
-          <span class="tool-tag">Business Model Canvas</span>
+          <span class="tool-tag">Tableau</span><span class="tool-tag">SQL/Python</span><span class="tool-tag">REST APIs</span><span class="tool-tag">SyslogNG</span><span class="tool-tag">Business Model Canvas</span>
         </div>
       </div>
 
@@ -656,25 +407,22 @@ footer {
           <span class="project-badge badge-bsa">BSA</span>
         </div>
         <p class="project-org">CSULB Academic Project</p>
-        <p class="project-desc">Designed a fully normalized 17-entity relational database applying data conversion methodologies. Produced a complete data dictionary, logical model, physical design, and access control policy aligned to enterprise data governance standards.</p>
+        <p class="project-desc">Designed a fully normalized 17-entity relational database applying data conversion methodologies. Produced a complete data dictionary, logical model, physical design, and access control policy. Engineered T-SQL stored procedures, triggers, indexes, and SSIS ETL packages for nightly builds and data quality validation.</p>
         <div class="project-outcomes">
-          <div class="outcome"><span class="outcome-check">✓</span> 17-entity fully normalized schema</div>
-          <div class="outcome"><span class="outcome-check">✓</span> 10 SQL analytical queries engineered</div>
-          <div class="outcome"><span class="outcome-check">✓</span> Full data governance & recovery SOPs</div>
+          <div class="outcome"><span class="outcome-check">✦</span> 17-entity normalized schema + full data dictionary</div>
+          <div class="outcome"><span class="outcome-check">✦</span> 10 SQL analytical queries across 3 operational domains</div>
+          <div class="outcome"><span class="outcome-check">✦</span> SSIS ETL packages + database recovery SOPs</div>
+          <div class="outcome"><span class="outcome-check">✦</span> Access control policy aligned to enterprise governance standards</div>
         </div>
         <div class="project-footer">
-          <span class="tool-tag">MySQL</span>
-          <span class="tool-tag">PostgreSQL</span>
-          <span class="tool-tag">ERD / Data modeling</span>
-          <span class="tool-tag">Data dictionary</span>
+          <span class="tool-tag">MySQL</span><span class="tool-tag">PostgreSQL</span><span class="tool-tag">T-SQL</span><span class="tool-tag">SSIS/ETL</span><span class="tool-tag">ERD</span>
         </div>
       </div>
 
-      <!-- Placeholder card for adding a 4th project -->
-      <div class="project-card" style="border-style: dashed; background: var(--paper-secondary); justify-content: center; align-items: center; min-height: 220px;">
-        <div style="text-align: center; color: var(--ink-tertiary);">
-          <div style="font-size: 28px; margin-bottom: 8px;">+</div>
-          <p style="font-size: 13px;">Add your next project here</p>
+      <div class="project-card" style="border-style: dashed; justify-content: center; align-items: center; min-height: 260px; cursor: default;">
+        <div style="text-align: center;">
+          <div style="font-family: var(--serif); font-size: 40px; color: var(--gold-dim); margin-bottom: 10px;">+</div>
+          <p style="font-size: 13px; font-weight: 300; color: var(--ink-tertiary);">Add your next project</p>
         </div>
       </div>
 
@@ -682,18 +430,20 @@ footer {
   </section>
 
   <!-- EDUCATION -->
-  <section class="section">
+  <section class="section" id="education">
     <div class="section-header">
       <span class="section-num">04</span>
       <h2 class="section-title">Education</h2>
     </div>
     <div class="edu-grid">
       <div class="edu-card">
+        <p class="edu-tag">Graduate</p>
         <p class="edu-deg">M.S. Information Systems</p>
         <p class="edu-school">California State University, Long Beach</p>
         <p class="edu-year">May 2026</p>
       </div>
       <div class="edu-card">
+        <p class="edu-tag">Undergraduate</p>
         <p class="edu-deg">B.E. Information Technology</p>
         <p class="edu-school">University of Mumbai</p>
         <p class="edu-year">May 2019</p>
@@ -705,36 +455,21 @@ footer {
   <div class="contact-section" id="contact">
     <div class="contact-inner">
       <div>
-        <h2 class="contact-heading">Let's work<br>together.</h2>
-        <p class="contact-sub">Open to BA, BSA, and PM roles — remote or hybrid. Based in Long Beach, CA. Always happy to connect and discuss how I can add value to your team.</p>
+        <h2 class="contact-heading">Let's work<br><span>together.</span></h2>
+        <p class="contact-sub">Open to BA, BSA, and PM roles — remote or hybrid. Based in Long Beach, CA. I bring enterprise-grade analytical rigor, full SDLC ownership, and a track record of zero missed go-lives. Let's connect.</p>
       </div>
       <div class="contact-links">
         <a href="mailto:stevenspaul97@gmail.com" class="contact-link">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          </div>
-          <div>
-            <p class="contact-link-label">Email</p>
-            <p class="contact-link-val">stevenspaul97@gmail.com</p>
-          </div>
+          <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+          <div><p class="contact-link-label">Email</p><p class="contact-link-val">stevenspaul97@gmail.com</p></div>
         </a>
         <a href="https://linkedin.com/in/stevensajipaul" target="_blank" class="contact-link">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
-          </div>
-          <div>
-            <p class="contact-link-label">LinkedIn</p>
-            <p class="contact-link-val">linkedin.com/in/stevensajipaul</p>
-          </div>
+          <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></div>
+          <div><p class="contact-link-label">LinkedIn</p><p class="contact-link-val">linkedin.com/in/stevensajipaul</p></div>
         </a>
         <a href="tel:5626867082" class="contact-link">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div>
-            <p class="contact-link-label">Phone</p>
-            <p class="contact-link-val">(562) 686-7082</p>
-          </div>
+          <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><p class="contact-link-label">Phone</p><p class="contact-link-val">(562) 686-7082</p></div>
         </a>
       </div>
     </div>
@@ -757,6 +492,5 @@ function showExp(id, tab) {
   tab.classList.add('active');
 }
 </script>
-
 </body>
 </html>
