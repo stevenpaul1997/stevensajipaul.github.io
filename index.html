@@ -31,8 +31,6 @@ body { font-family: var(--sans); background: var(--black); color: var(--ink); fo
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-
-/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,8,0.94); backdrop-filter: blur(18px); border-bottom: 0.5px solid var(--border); }
 .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; height: 62px; display: flex; justify-content: space-between; align-items: center; }
 .nav-logo { font-family: var(--serif); font-size: 19px; font-weight: 400; color: var(--gold-light); text-decoration: none; letter-spacing: 0.02em; white-space: nowrap; }
@@ -41,14 +39,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-links a:hover { color: var(--gold-light); }
 .nav-cta { font-size: 11px !important; font-weight: 500 !important; color: var(--black) !important; background: var(--gold) !important; padding: 8px 18px !important; border-radius: var(--radius) !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; transition: background 0.15s !important; }
 .nav-cta:hover { background: var(--gold-light) !important; }
-
-/* LAYOUT */
 .page { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; }
-
-/* HERO */
 .hero { padding: 150px 0 90px; display: grid; grid-template-columns: 1fr 370px; gap: 4rem; align-items: center; border-bottom: 0.5px solid var(--border); }
-.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
-.hero-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
 .hero h1 { font-family: var(--serif); font-size: 68px; font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 1.5rem; white-space: nowrap; }
 .name-steven { color: var(--gold-light); }
 .name-saji   { color: var(--gold-light); }
@@ -59,8 +51,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .btn-primary:hover { background: var(--gold-light); }
 .btn-secondary { font-size: 11px; font-weight: 400; padding: 12px 24px; background: transparent; color: var(--gold); border: 0.5px solid var(--border-mid); border-radius: var(--radius); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.15s; }
 .btn-secondary:hover { background: var(--gold-bg); }
-
-/* HERO CARD */
 .hero-card { background: var(--black-card); border: 0.5px solid var(--border-mid); border-radius: var(--radius-lg); padding: 2rem; position: relative; overflow: hidden; }
 .hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 .hero-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1.5rem; }
@@ -71,14 +61,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .role-stack { display: flex; flex-direction: column; gap: 7px; }
 .role-item { font-size: 12px; font-weight: 400; color: var(--gold); background: var(--gold-bg); border: 0.5px solid var(--border); padding: 6px 12px; border-radius: var(--radius); display: flex; align-items: center; gap: 8px; }
 .role-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-
-/* SECTIONS */
 .section { padding: 5.5rem 0; border-bottom: 0.5px solid var(--border); }
 .section-header { display: flex; align-items: baseline; gap: 1.25rem; margin-bottom: 3rem; }
 .section-num { font-family: var(--serif); font-size: 13px; color: var(--gold-dim); letter-spacing: 0.06em; }
 .section-title { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--ink); letter-spacing: 0.01em; }
-
-/* SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 .skill-block { background: var(--black-card); padding: 1.75rem; }
 .skill-block-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
@@ -86,8 +72,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .skill-list li { font-size: 13px; color: var(--ink-secondary); padding: 5px 0; border-bottom: 0.5px solid rgba(201,168,76,0.07); display: flex; align-items: center; gap: 8px; font-weight: 300; }
 .skill-list li:last-child { border-bottom: none; }
 .skill-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0; }
-
-/* EXPERIENCE TABS */
 .exp-grid { display: grid; grid-template-columns: 220px 1fr; }
 .exp-timeline { padding-right: 2.5rem; border-right: 0.5px solid var(--border); }
 .exp-entries { padding-left: 2.5rem; }
@@ -106,8 +90,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .exp-bullets li { font-size: 14px; color: var(--ink-secondary); line-height: 1.7; padding-left: 18px; position: relative; font-weight: 300; }
 .exp-bullets li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 1px; background: var(--gold-dim); }
 .metric { display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; color: var(--gold-light); background: var(--gold-bg); border: 0.5px solid rgba(201,168,76,0.25); padding: 1px 8px; border-radius: 20px; margin: 0 2px; vertical-align: middle; white-space: nowrap; }
-
-/* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .project-card { background: var(--black-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.875rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
 .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); opacity: 0; transition: opacity 0.2s; }
@@ -126,8 +108,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .outcome-check { color: var(--gold); font-size: 11px; flex-shrink: 0; margin-top: 1px; }
 .project-footer { padding-top: 1rem; border-top: 0.5px solid var(--border); display: flex; flex-wrap: wrap; gap: 5px; }
 .tool-tag { font-size: 11px; color: var(--ink-tertiary); background: rgba(255,255,255,0.04); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 3px 9px; }
-
-/* EDUCATION */
+.project-links { padding-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.project-link-primary { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; background: var(--gold); color: var(--black); border-radius: var(--radius); text-decoration: none; transition: background 0.15s; }
+.project-link-primary:hover { background: var(--gold-light); }
+.project-link-secondary { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; background: transparent; color: var(--gold); border: 0.5px solid var(--border-mid); border-radius: var(--radius); text-decoration: none; transition: background 0.15s; }
+.project-link-secondary:hover { background: var(--gold-bg); }
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .edu-card { background: var(--black-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; position: relative; overflow: hidden; transition: border-color 0.2s; }
 .edu-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--gold-dim), transparent); }
@@ -136,8 +121,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .edu-deg { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 5px; }
 .edu-school { font-size: 13px; color: var(--ink-secondary); font-weight: 300; margin-bottom: 4px; }
 .edu-year { font-size: 12px; color: var(--gold-dim); }
-
-/* CONTACT */
 .contact-section { padding: 5.5rem 0; }
 .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 .contact-heading { font-family: var(--serif); font-size: 48px; font-weight: 300; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
@@ -150,14 +133,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .contact-link-icon svg { width: 15px; height: 15px; stroke: var(--gold); }
 .contact-link-label { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 1px; }
 .contact-link-val { font-size: 12px; color: var(--ink-tertiary); }
-
-/* FOOTER */
 footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
 .footer-inner { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; }
 .footer-name { font-family: var(--serif); font-size: 15px; color: var(--gold-dim); }
 .footer-note { font-size: 11px; color: var(--ink-tertiary); letter-spacing: 0.04em; }
-
-/* RESPONSIVE */
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; padding: 130px 0 70px; }
   .hero h1 { font-size: 48px; white-space: normal; }
@@ -360,13 +339,13 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
 
     <div class="projects-grid" id="projects-visible">
 
-      <!-- BSA: ReqAgent — NEW PROJECT -->
+      <!-- BSA: ReqAgent — LIVE PROJECT -->
       <div class="project-card">
         <div class="project-card-top">
           <p class="project-title">ReqAgent — AI Requirement Intake & Tracker</p>
           <span class="project-badge badge-bsa">BSA</span>
         </div>
-        <p class="project-org">Portfolio Project · Python · MongoDB Atlas · Neon Postgres · Groq AI</p>
+        <p class="project-org">Live Project · Python · MongoDB Atlas · Neon Postgres · Groq AI</p>
         <p class="project-desc">Built an enterprise-grade AI-powered requirements intake system that eliminates the gap between a stakeholder's vague request and a Jira-ready user story. Raw intake is stored in MongoDB Atlas; LLaMA 3.3 70B generates user stories, acceptance criteria, MoSCoW classification, priority scores, and conflict detection — with structured output persisted in Neon Postgres for full lifecycle tracking.</p>
         <div class="project-outcomes">
           <div class="outcome"><span class="outcome-check">·</span> Dual-database architecture — MongoDB for unstructured intake, Postgres for relational output with audit trail</div>
@@ -381,6 +360,11 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
           <span class="tool-tag">Neon Postgres</span>
           <span class="tool-tag">Groq / LLaMA 3.3 70B</span>
           <span class="tool-tag">Plotly</span>
+        </div>
+        <div class="project-links">
+          <a href="https://ai-requirement-tracker-fmbmecjmqq9ffs57v2sr8s.streamlit.app/" target="_blank" class="project-link-primary">▶ Live Demo</a>
+          <a href="docs/reqagent/ReqAgent User Guide.pdf" target="_blank" class="project-link-secondary">User Guide</a>
+          <a href="https://github.com/stevenpaul1997/ai-requirement-tracker" target="_blank" class="project-link-secondary">GitHub</a>
         </div>
       </div>
 
@@ -443,15 +427,13 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
 
     </div>
 
-    <!-- Show more button -->
     <div style="text-align:center; margin-top: 2rem;">
       <button onclick="toggleProjects()" id="projects-toggle-btn" style="font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 28px; background: transparent; color: var(--gold); border: 0.5px solid var(--border-mid); border-radius: var(--radius); cursor: pointer; transition: background 0.15s; display: inline-flex; align-items: center; gap: 8px;">
-        <span id="toggle-label">View 4 More Projects</span>
+        <span id="toggle-label">View 3 More Projects</span>
         <span id="toggle-icon" style="font-size: 18px; line-height: 1;">+</span>
       </button>
     </div>
 
-    <!-- Hidden: remaining projects -->
     <div class="projects-grid" id="projects-extra" style="display:none; margin-top: 1.5rem;">
 
       <!-- BSA: Car Marketplace -->
@@ -511,25 +493,6 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
         </div>
       </div>
 
-      <!-- BSA: SolarWinds -->
-      <div class="project-card">
-        <div class="project-card-top">
-          <p class="project-title">SolarWinds Supply Chain Attack — IS Security Analysis</p>
-          <span class="project-badge badge-bsa">BSA</span>
-        </div>
-        <p class="project-org">CSULB Academic Project · IS 656</p>
-        <p class="project-desc">Conducted a comprehensive systems security analysis of the SolarWinds Orion supply chain attack. Documented the full 8-stage attack lifecycle, assessed financial impact across 18,000+ organizations, and produced a structured security best practices framework covering SIEM, Active Directory auditing, penetration testing, and DLP controls.</p>
-        <div class="project-outcomes">
-          <div class="outcome"><span class="outcome-check">·</span> Mapped 8-stage attack lifecycle — from infiltration (Sep 2019) to global disclosure (Dec 2020)</div>
-          <div class="outcome"><span class="outcome-check">·</span> Assessed financial impact: $90–100M U.S. direct costs; 90% of orgs changed cybersecurity posture</div>
-          <div class="outcome"><span class="outcome-check">·</span> Produced security controls framework: SIEM (Splunk), AD auditing, pen testing & DLP</div>
-          <div class="outcome"><span class="outcome-check">·</span> Mapped mitigations to MITRE ATT&CK, NIST, COBIT & Zero Trust frameworks</div>
-        </div>
-        <div class="project-footer">
-          <span class="tool-tag">Splunk / SIEM</span><span class="tool-tag">MITRE ATT&CK</span><span class="tool-tag">Zero Trust</span><span class="tool-tag">NIST / COBIT</span><span class="tool-tag">Active Directory</span><span class="tool-tag">DLP</span>
-        </div>
-      </div>
-
     </div>
 
   </section>
@@ -537,9 +500,9 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
   <script>
   function toggleProjects() {
     var extra = document.getElementById('projects-extra');
-    var btn = document.getElementById('projects-toggle-btn');
     var label = document.getElementById('toggle-label');
     var icon = document.getElementById('toggle-icon');
+    var btn = document.getElementById('projects-toggle-btn');
     if (extra.style.display === 'none') {
       extra.style.display = 'grid';
       label.textContent = 'Show Less';
@@ -548,7 +511,7 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
       btn.style.borderColor = 'var(--border)';
     } else {
       extra.style.display = 'none';
-      label.textContent = 'View 4 More Projects';
+      label.textContent = 'View 3 More Projects';
       icon.textContent = '+';
       btn.style.color = 'var(--gold)';
       btn.style.borderColor = 'var(--border-mid)';
