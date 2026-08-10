@@ -184,7 +184,7 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
   <div class="hero">
     <div class="hero-left">
       <h1><span class="name-steven">Steven </span><span class="name-saji">Saji </span><span class="name-paul">Paul</span></h1>
-      <p class="hero-sub">Product Manager with 6+ years driving product strategy, business analysis, and enterprise solution delivery across healthcare and technology. Currently leading a healthcare provider analytics platform at Optum 35% increase in user adoption, 200+ client organizations, zero missed go-lives.</p>
+      <p class="hero-sub">Product Manager with 5+ years driving product strategy, business analysis, and enterprise solution delivery across healthcare and technology. Currently leading a healthcare provider analytics platform at Optum 35% increase in user adoption, 200+ client organizations, zero missed go-lives.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="mailto:stevenspaul97@gmail.com" class="btn-secondary">Get in Touch</a>
@@ -194,7 +194,7 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
       <div class="hero-card">
         <p class="hero-card-label">Career Snapshot</p>
         <div class="stat-pair">
-          <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Years of experience</div></div>
+          <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Years of experience</div></div>
           <div class="stat"><div class="stat-n">35%</div><div class="stat-l">Increase in user adoption at Optum</div></div>
           <div class="stat"><div class="stat-n">200+</div><div class="stat-l">Client organizations served</div></div>
           <div class="stat"><div class="stat-n">98%</div><div class="stat-l">On-time delivery rate</div></div>
@@ -575,14 +575,33 @@ footer { border-top: 0.5px solid var(--border); padding: 1.75rem 0; }
         <p style="font-size: 13px; color: var(--ink-secondary); font-weight: 300; margin-bottom: 0.4rem;">Business Systems Analyst · Product Manager · BA</p>
         <p style="font-size: 12px; color: var(--gold-dim); margin-bottom: 1.75rem;">Updated · June 2025</p>
         <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.75rem;">
-          <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-secondary); font-weight: 300;"><span style="width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0;"></span>6+ years of experience across TCS & CSULB</div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-secondary); font-weight: 300;"><span style="width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0;"></span>5+ years of experience across TCS & CSULB</div>
           <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-secondary); font-weight: 300;"><span style="width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0;"></span>M.S. Information Systems · CSULB (May 2026)</div>
           <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-secondary); font-weight: 300;"><span style="width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); flex-shrink: 0;"></span>Available to start immediately</div>
         </div>
-        <a href="Steven_Paul_Resume.pdf" download="Steven_Saji_Paul_Resume.pdf" style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; background: var(--gold); color: var(--black); border-radius: var(--radius); text-decoration: none; transition: background 0.15s;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Resume
-        </a>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+          <a id="resume-download-btn" href="Steven_Paul_Resume.pdf" download="Steven_Saji_Paul_Resume.pdf" style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; background: var(--gold); color: var(--black); border-radius: var(--radius); text-decoration: none; transition: background 0.15s;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <label for="resume-upload" style="display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; background: transparent; color: var(--gold); border: 0.5px solid var(--border-mid); border-radius: var(--radius); cursor: pointer; transition: background 0.15s;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Change Resume
+          </label>
+          <input type="file" id="resume-upload" accept=".pdf" style="display:none;" onchange="changeResume(this)" />
+        </div>
+        <p id="resume-changed-msg" style="display:none; font-size: 12px; color: var(--gold-dim); margin-top: 10px;">Resume updated for this session. To make it permanent, upload the new PDF to GitHub as <strong>Steven_Paul_Resume.pdf</strong>.</p>
+        <script>
+        function changeResume(input) {
+          if (!input.files || !input.files[0]) return;
+          var file = input.files[0];
+          var url = URL.createObjectURL(file);
+          var btn = document.getElementById('resume-download-btn');
+          btn.href = url;
+          btn.download = file.name;
+          document.getElementById('resume-changed-msg').style.display = 'block';
+        }
+        </script>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <div style="background: var(--black-card); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;">
